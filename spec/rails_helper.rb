@@ -61,7 +61,7 @@ RSpec.configure do |config|
   # config.include Devise::Test::ControllerHelpers, type: :controller
   # config.include DeviseHelpers, type: :acceptance
 
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 end
 
 Shoulda::Matchers.configure do |config|
