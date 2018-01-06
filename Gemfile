@@ -23,3 +23,10 @@ group :development do
   gem "rubocop"
   gem "spring"
 end
+
+group :test do
+  gem "faker"
+  gem "rspec-rails"
+  gem "shoulda-matchers"
+  gem "simplecov", require: false
+end

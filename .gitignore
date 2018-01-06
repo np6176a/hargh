@@ -14,3 +14,9 @@
 !/tmp/.keep
 
 .byebug_history
+
+# Ignore Coverage
+coverage
+
+# Ignore rspec failures file
+spec/examples.txt
