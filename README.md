@@ -38,6 +38,11 @@ those models not changing.
 
 ### Data Script
 
+*Known Limitations*: I know that the HAR spec allows for files to
+include multiple pages. However, this project currently only supports
+single page HARs. We're essentially ignoring the `pageRef` key in
+each `entry` for expediency right now.
+
 # Running Locally
 
 1. Install the Ruby Version specified in the `.ruby-version` file via
@@ -51,7 +56,7 @@ RVM or RBenv
 
 1. Copy the `.env.example` file to `.env`
 
-1. Set all values in the `.env` file. 
+1. Set all values in the `.env` file.
 
 1. Setup the database using `bundle exec rails db:setup`
 
