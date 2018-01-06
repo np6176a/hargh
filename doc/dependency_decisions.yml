@@ -1,0 +1,44 @@
+---
+- - :whitelist
+  - MIT
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-01-06 21:43:30.973894000 Z
+- - :whitelist
+  - ruby
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-01-06 21:43:36.906899000 Z
+- - :whitelist
+  - BSD
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-01-06 21:43:43.452292000 Z
+- - :whitelist
+  - Apache 2.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-01-06 21:43:52.183519000 Z
+- - :whitelist
+  - New BSD
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-01-06 21:43:57.058414000 Z
+- - :whitelist
+  - Simplified BSD
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-01-06 21:46:28.827355000 Z
+- - :license
+  - blankslate
+  - MIT
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2018-01-06 21:46:58.673226000 Z

@@ -1,19 +1,25 @@
-source 'https://rubygems.org'
-ruby '2.4.3'
+source "https://rubygems.org"
+ruby "2.4.3"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
 
-
-gem 'jbuilder'
-gem 'pg'
-gem 'pry-inline'
-gem 'pry-rails'
-gem 'puma'
-gem 'rails'
+gem "jbuilder"
+gem "pg"
+gem "pry-inline"
+gem "pry-rails"
+gem "puma"
+gem "rails"
 
 group :development do
-  gem 'spring'
+  gem "annotate"
+  gem "brakeman"
+  gem "license_finder"
+  gem "mdl"
+  gem "overcommit"
+  gem "rails_best_practices"
+  gem "rubocop"
+  gem "spring"
 end
