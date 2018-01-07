@@ -3,7 +3,7 @@ require "rails_helper"
 describe Entry, type: :model do
   subject { build(:entry) }
 
-  it { should belong_to(:har).inverse_of(:entries) }
+  it { should belong_to(:har).inverse_of(:entries).counter_cache(true) }
 
   it { should validate_presence_of(:started_date_time) }
   it { should validate_presence_of(:time) }

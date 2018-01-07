@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107005329) do
+ActiveRecord::Schema.define(version: 20180107171257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20180107005329) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.jsonb "raw"
+    t.integer "entries_count"
+    t.index ["entries_count"], name: "index_hars_on_entries_count"
     t.index ["page_timings_on_content_loaded"], name: "index_hars_on_page_timings_on_content_loaded"
     t.index ["page_timings_on_load"], name: "index_hars_on_page_timings_on_load"
     t.index ["started_date_time"], name: "index_hars_on_started_date_time"

@@ -10,9 +10,11 @@
 #  created_at                     :datetime         not null
 #  updated_at                     :datetime         not null
 #  raw                            :jsonb
+#  entries_count                  :integer
 #
 # Indexes
 #
+#  index_hars_on_entries_count                   (entries_count)
 #  index_hars_on_page_timings_on_content_loaded  (page_timings_on_content_loaded)
 #  index_hars_on_page_timings_on_load            (page_timings_on_load)
 #  index_hars_on_started_date_time               (started_date_time)

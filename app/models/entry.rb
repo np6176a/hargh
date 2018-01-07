@@ -45,7 +45,7 @@ class Entry < ApplicationRecord
   serialize :raw
 
   # Associations
-  belongs_to :har, inverse_of: :entries
+  belongs_to :har, inverse_of: :entries, counter_cache: true
 
   # Validations
   validates :started_date_time, presence: true
