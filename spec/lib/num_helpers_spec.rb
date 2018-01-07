@@ -1,4 +1,6 @@
-describe HarData do
+require_relative "../../lib/num_helpers"
+
+describe NumHelpers do
   describe "#handle_negative" do
     it "returns nil if the value is -1" do
       result = described_class.handle_negative(-1)
