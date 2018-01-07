@@ -10,9 +10,8 @@ before_script:
   - ./cc-test-reporter before-build
 dist: trusty
 env:
+  - CC_TEST_REPORTER_ID=45cb98949c9d746bd8179c22677112ce905e5a2a6dd6f00f1e8e86a1932244df
   - HOST_API=http://localhost:3000
-  global:
-    - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c2a88f1d
 language: ruby
 rvm:
   - 2.4.3
