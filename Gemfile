@@ -17,6 +17,7 @@ gem "rails"
 
 group :development, :test do
   gem "dotenv-rails"
+  gem "rspec_api_documentation"
 end
 
 group :development do

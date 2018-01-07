@@ -116,6 +116,7 @@ GEM
     mixlib-config (2.2.4)
     multi_json (1.12.2)
     multi_xml (0.6.0)
+    mustache (1.0.5)
     nio4r (2.2.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -175,6 +176,10 @@ GEM
     rainbow (3.0.0)
     rake (12.3.0)
     require_all (1.5.0)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -192,6 +197,10 @@ GEM
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.0)
+    rspec_api_documentation (5.1.0)
+      activesupport (>= 3.0.0)
+      mustache (~> 1.0, >= 0.99.4)
+      rspec (~> 3.0)
     rubocop (0.52.1)
       parallel (~> 1.10)
       parser (>= 2.4.0.2, < 3.0)
@@ -254,6 +263,7 @@ DEPENDENCIES
   rails
   rails_best_practices
   rspec-rails
+  rspec_api_documentation
   rubocop
   shoulda-matchers
   simplecov
