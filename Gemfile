@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "dotenv-rails-safe", git: "https://github.com/rvirani1/dotenv-rails-safe.git", tag: "v0.3.0"
 gem "jbuilder"
 gem "light-service"
 gem "pg"
@@ -13,6 +14,10 @@ gem "pry-inline"
 gem "pry-rails"
 gem "puma"
 gem "rails"
+
+group :development, :test do
+  gem "dotenv-rails"
+end
 
 group :development do
   gem "annotate"

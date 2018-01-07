@@ -18,6 +18,9 @@
 # Ignore Coverage
 coverage
 
+# Ignore ENV files
+.env
+
 # Ignore rspec failures file
 spec/examples.txt
 
