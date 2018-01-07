@@ -85,6 +85,8 @@ GEM
       toml (= 0.1.2)
       with_env (> 1.0)
       xml-simple
+    light-service (0.8.4)
+      activesupport (>= 3.0)
     loofah (2.1.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -228,6 +230,7 @@ DEPENDENCIES
   faker
   jbuilder
   license_finder
+  light-service
   mdl
   overcommit
   pg

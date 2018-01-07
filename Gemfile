@@ -7,6 +7,7 @@ git_source(:github) do |repo_name|
 end
 
 gem "jbuilder"
+gem "light-service"
 gem "pg"
 gem "pry-inline"
 gem "pry-rails"
