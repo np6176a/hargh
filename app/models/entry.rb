@@ -47,6 +47,9 @@ class Entry < ApplicationRecord
   # Associations
   belongs_to :har, inverse_of: :entries, counter_cache: true
 
+  # Scopes
+  scope :url, ->(str) { where("url ILIKE ?", "%#{str}%") }
+
   # Validations
   validates :started_date_time, presence: true
   validates :time, presence: true, numericality: true
