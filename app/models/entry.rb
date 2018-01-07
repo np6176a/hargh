@@ -20,9 +20,11 @@
 #  raw                        :jsonb            not null
 #  created_at                 :datetime         not null
 #  updated_at                 :datetime         not null
+#  har_id                     :integer          not null
 #
 # Indexes
 #
+#  index_entries_on_har_id                      (har_id)
 #  index_entries_on_http_method                 (http_method)
 #  index_entries_on_response_content_mime_type  (response_content_mime_type)
 #  index_entries_on_response_content_size       (response_content_size)
@@ -42,6 +44,9 @@
 class Entry < ApplicationRecord
   serialize :raw
 
+  # Associations
+  belongs_to :har, inverse_of: :entries
+
   # Validations
   validates :started_date_time, presence: true
   validates :time, presence: true, numericality: true
@@ -51,4 +56,5 @@ class Entry < ApplicationRecord
   validates :response_content_size, presence: true, numericality: true
   validates :raw, presence: true
   validates :time, presence: true, numericality: true
+  validates :har, presence: true
 end

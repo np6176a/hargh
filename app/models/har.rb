@@ -9,6 +9,7 @@
 #  page_timings_on_load           :decimal(, )      not null
 #  created_at                     :datetime         not null
 #  updated_at                     :datetime         not null
+#  raw                            :jsonb
 #
 # Indexes
 #
@@ -18,6 +19,9 @@
 #
 
 class Har < ApplicationRecord
+  # Associations
+  has_many :entries, inverse_of: :har
+
   # Validations
   validates :started_date_time, presence: true
   validates :title, presence: true

@@ -4,5 +4,6 @@ FactoryBot.define do
     title { Faker::Company.name }
     page_timings_on_content_loaded { Faker::Number.positive }
     page_timings_on_load { Faker::Number.positive }
+    raw SAMPLE_RAW_ENTRY
   end
 end

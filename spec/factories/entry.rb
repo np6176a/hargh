@@ -16,6 +16,7 @@ FactoryBot.define do
     timings_send { Faker::Number.positive }
     timings_wait { Faker::Number.positive }
     timings_receive { Faker::Number.positive }
-    raw SAMPLE_RAW_ENTRY
+    raw { SAMPLE_RAW_ENTRY.dig(:log, :entries).sample }
+    har
   end
 end
