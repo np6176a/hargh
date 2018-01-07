@@ -1,4 +1,8 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/ee6695d41437428570f3/maintainability)](https://codeclimate.com/github/rvirani1/hargh/maintainability)
+[![Build Status](https://travis-ci.org/rvirani1/hargh.svg?branch=master)](https://travis-ci.org/rvirani1/hargh)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ee6695d41437428570f3/test_coverage)](https://codeclimate.com/github/rvirani1/hargh/test_coverage)
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Hargh
 
