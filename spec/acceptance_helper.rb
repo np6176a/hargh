@@ -3,10 +3,10 @@ require "rspec_api_documentation"
 require "rspec_api_documentation/dsl"
 
 RspecApiDocumentation.configure do |config|
-  config.api_name = "Hargh API Docs"
-  config.format = [:html]
-  config.curl_host = ENV.fetch("HOST_API")
-  config.request_body_formatter = :json
+  config.api_name                = "Hargh API Docs"
+  config.format                  = [:html]
+  config.curl_host               = ENV.fetch("HOST_API")
+  config.request_body_formatter  = :json
 end
 
 RSpec.configure do |config|

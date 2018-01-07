@@ -5,7 +5,14 @@ class HarsController < ApplicationController
     if result.success?
       head :ok
     else
-      render_error(error_result: result)
+      render_error(msg: result.message, code: result.error_code, status: 400)
     end
   end
+
+  private
+
+  def current_har
+    @_har ||= Har.find(params[:id])
+  end
+  helper_method :current_har
 end
