@@ -9,7 +9,7 @@ describe Hars::CreateHar do
       har    = result.fetch(:har)
       expect(result.params).to eq(data)
       expect(har.raw).to eq(data)
-      expect(har.entries.count).to eq(15)
+      expect(har.entries_count).to eq(15)
     end.to change { Har.count }.by(1)
       .and change { Entry.count }.by(15)
   end

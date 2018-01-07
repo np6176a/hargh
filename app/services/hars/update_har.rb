@@ -1,13 +1,14 @@
-class Hars::CreateHar
+class Hars::UpdateHar
   extend LightService::Organizer
 
-  def self.call(params:)
+  def self.call(har:, params:)
     with(
+      har: har,
       params: params
     ).reduce(
       Hars::Actions::ValidateSchema,
-      Hars::Actions::InitializeHar,
       Hars::Actions::BuildHar,
+      Hars::Actions::MarkEntriesDestruction,
       Hars::Actions::BuildEntries,
       Hars::Actions::SaveHar
     )

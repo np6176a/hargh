@@ -7,7 +7,7 @@ describe HarSchema do
   end
 
   it "is invalid if there no log key" do
-    sample_data = SAMPLE_RAW_DATA.dup
+    sample_data = SAMPLE_RAW_DATA.deep_dup
     sample_data[:loggy] = sample_data.delete(:log)
     sample_data_schema = described_class.call(sample_data)
     expect(sample_data_schema.success?).to eq(false)

@@ -1,4 +1,4 @@
-class Hars::CreateHar::SaveHar
+class Hars::Actions::SaveHar
   extend LightService::Action
   expects :har
   promises :har

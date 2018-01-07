@@ -22,6 +22,23 @@ resource "Hars" do
       )
       expect(status).to eq(200)
       json = JSON.parse(response_body).with_indifferent_access
+      expect(json.dig(:har, :id)).to eq(har.id)
+      schema = ShowJbuilderSchema.call(json)
+      expect(schema.success?).to eq(true)
+    end
+  end
+
+  patch "/hars/:id" do
+    example "/hars/id - PATCH - Success" do
+      explanation "Allows you update and replace a HAR"
+      har = create(:har)
+      comment = "Changed Comment"
+      patch_data = SAMPLE_RAW_DATA.merge(id: har.id)
+      patch_data[:log][:comment] = comment
+      do_request(patch_data)
+      expect(status).to eq(200)
+      json = JSON.parse(response_body).with_indifferent_access
+      expect(json.dig(:har, :raw, :log, :comment)).to eq(comment)
       schema = ShowJbuilderSchema.call(json)
       expect(schema.success?).to eq(true)
     end

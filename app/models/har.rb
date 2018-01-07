@@ -22,7 +22,7 @@
 
 class Har < ApplicationRecord
   # Associations
-  has_many :entries, inverse_of: :har
+  has_many :entries, inverse_of: :har, autosave: true
 
   # Validations
   validates :started_date_time, presence: true

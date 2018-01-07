@@ -57,11 +57,25 @@ We're essentially ignoring the `pageRef` key in each `entry`
 for expediency right now.
 
 * Issues with Unicode Sequences
+
 Some web pages will include Unicode sequences. Since we store the raw
 data in Postgres `jsonb` fields. There is a known issue since 9.4.1
 with unicode sequences. A quick [Google Search](https://goo.gl/rH7tWF)
 reveals a lot of information. We haven't tried to implement any of
 the workarounds yet
+
+* Performance
+
+It might just be that we are validating and processing lots of data.
+Some of these HAR files are quite large. Howver, the create and update
+endpoints take half a second to a second to run. The logs show that the
+issue is not in the view generation after the controller is done or at
+the database layer. It also doesn't look like the schema validation is
+causing the time delay. My suspicion for further investigation would
+be the use of a `jsonb` column for the raw data storage. I wonder if the
+Rails side has to do a lot of computation on these large data structures
+before save. I'm also using `HashWithIndifferentAccess` everywhere. I
+wonder if that also has a performance implication.
 
 # Running Locally
 

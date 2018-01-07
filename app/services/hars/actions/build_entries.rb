@@ -1,4 +1,4 @@
-class Hars::CreateHar::BuildEntries
+class Hars::Actions::BuildEntries
   extend LightService::Action
   expects :har_schema, :har
   promises :har

@@ -1,4 +1,4 @@
-class Hars::CreateHar::ValidateSchema
+class Hars::Actions::ValidateSchema
   extend LightService::Action
   expects :params
   promises :har_schema
