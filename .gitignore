@@ -20,3 +20,6 @@ coverage
 
 # Ignore rspec failures file
 spec/examples.txt
+
+# Don't include all sample files
+sample_files
