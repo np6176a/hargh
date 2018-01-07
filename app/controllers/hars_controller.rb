@@ -25,6 +25,10 @@ class HarsController < ApplicationController
     end
   end
 
+  def destroy
+    current_har.destroy
+  end
+
   private
 
   def current_har

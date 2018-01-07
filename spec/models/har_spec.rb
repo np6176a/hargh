@@ -16,7 +16,7 @@ require "rails_helper"
 describe Har, type: :model do
   subject { build(:har) }
 
-  it { should have_many(:entries).inverse_of(:har) }
+  it { should have_many(:entries).inverse_of(:har).autosave(true).dependent(:destroy) }
 
   it { should validate_presence_of(:started_date_time) }
   it { should validate_presence_of(:title) }

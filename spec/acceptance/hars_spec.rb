@@ -43,4 +43,14 @@ resource "Hars" do
       expect(schema.success?).to eq(true)
     end
   end
+
+  delete "/hars/:id" do
+    example "/hars/:id - DELETE - Success" do
+      explanation "Allows you to delte a HAR"
+      har = create(:har)
+      do_request(id: har.id)
+      expect(status).to eq(204)
+      expect(Har.find_by_id(har.id)).to be_nil
+    end
+  end
 end
