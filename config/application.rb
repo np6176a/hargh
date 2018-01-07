@@ -13,6 +13,8 @@ require "action_view/railtie"
 require "rails/test_unit/railtie"
 
 require_relative "../lib/num_helpers"
+require_relative "../lib/schemas/har_schema"
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

@@ -12,6 +12,7 @@
 
 * [Overview](#overview)
 * [Design Thoughts](#design-thoughts)
+* [Known Limitations](#known-limitations)
 * [Running Locally](#running-locally)
 * [License](#license)
 
@@ -46,10 +47,21 @@ those models not changing.
 
 ### Data Script
 
-*Known Limitations*: I know that the HAR spec allows for files to
-include multiple pages. However, this project currently only supports
-single page HARs. We're essentially ignoring the `pageRef` key in
-each `entry` for expediency right now.
+## Known Limitations
+
+* Only supports single page HARs
+
+The HAR spec allows for files to include multiple pages.
+However, this project currently only supports single page HARs.
+We're essentially ignoring the `pageRef` key in each `entry`
+for expediency right now.
+
+* Issues with Unicode Sequences
+Some web pages will include Unicode sequences. Since we store the raw
+data in Postgres `jsonb` fields. There is a known issue since 9.4.1
+with unicode sequences. A quick [Google Search](https://goo.gl/rH7tWF)
+reveals a lot of information. We haven't tried to implement any of
+the workarounds yet
 
 # Running Locally
 
