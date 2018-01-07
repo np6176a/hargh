@@ -29,4 +29,5 @@ class Har < ApplicationRecord
   validates :title, presence: true
   validates :page_timings_on_content_loaded, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :page_timings_on_load, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  # TODO: Add a validation that uses the HarSchema validator to check the data
 end

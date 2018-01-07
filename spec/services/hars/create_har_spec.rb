@@ -5,9 +5,9 @@ describe Hars::CreateHar do
 
   it "creates a Har and Associated Entries" do
     expect do
-      result = described_class.call(data: data)
+      result = described_class.call(params: data)
       har    = result.fetch(:har)
-      expect(result.data).to eq(data)
+      expect(result.params).to eq(data)
       expect(har.raw).to eq(data)
       expect(har.entries.count).to eq(15)
     end.to change { Har.count }.by(1)
