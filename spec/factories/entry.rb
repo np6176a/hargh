@@ -1,4 +1,4 @@
-require_relative "../../spec/support/sample_raw_entry"
+require_relative "../../spec/support/sample_raw_data"
 
 FactoryBot.define do
   factory :entry do
@@ -16,7 +16,7 @@ FactoryBot.define do
     timings_send { Faker::Number.positive }
     timings_wait { Faker::Number.positive }
     timings_receive { Faker::Number.positive }
-    raw { SAMPLE_RAW_ENTRY.dig(:log, :entries).sample }
+    raw { SAMPLE_RAW_DATA.dig(:log, :entries).sample }
     har
   end
 end

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Hars::CreateHar do
-  let(:data) { SAMPLE_RAW_ENTRY }
+  let(:data) { SAMPLE_RAW_DATA }
 
   it "creates a Har and Associated Entries" do
     expect do
