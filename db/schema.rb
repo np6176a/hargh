@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107171257) do
+ActiveRecord::Schema.define(version: 20180107213029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20180107171257) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.jsonb "raw"
-    t.integer "entries_count"
+    t.integer "entries_count", default: 0, null: false
     t.index ["entries_count"], name: "index_hars_on_entries_count"
     t.index ["page_timings_on_content_loaded"], name: "index_hars_on_page_timings_on_content_loaded"
     t.index ["page_timings_on_load"], name: "index_hars_on_page_timings_on_load"

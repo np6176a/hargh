@@ -10,7 +10,7 @@
 #  created_at                     :datetime         not null
 #  updated_at                     :datetime         not null
 #  raw                            :jsonb
-#  entries_count                  :integer
+#  entries_count                  :integer          default(0), not null
 #
 # Indexes
 #
