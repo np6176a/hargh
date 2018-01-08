@@ -120,6 +120,13 @@ Heroku deploy button below.
 If you want to see the current API docs, you can check them out on the
 deployed [Heroku Instance](https://hargh.herokuapp.com/docs)
 
+## Loading HAR files
+
+There is a little helper script to load HARs from the command line
+called `load_har`.
+
+Download a HAR and call `./load_har '<path_to_har>''`
+
 # License
 
 This project is licensed under the [MIT License](./LICENSE.md)

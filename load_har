@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require_relative "./config/environment"
+
+path = ARGV[0]
+
+puts "Started Reading"
+file = File.read(path)
+json = JSON.parse(file).with_indifferent_access
+puts "Completed Reading"
+
+puts "Started Save"
+Hars::CreateHar.call(params: json)
+puts "Completed Save"
+
