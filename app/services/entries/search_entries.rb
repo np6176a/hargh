@@ -3,7 +3,7 @@ class Entries::SearchEntries
 
   def self.call(params:)
     with(
-      params: params.with_indifferent_access
+      params: params
     ).reduce(
       Entries::Actions::ExecuteSearch
     )

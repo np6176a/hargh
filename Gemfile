@@ -15,6 +15,7 @@ gem "pry-inline"
 gem "pry-rails"
 gem "puma"
 gem "rails"
+gem "stronger_parameters"
 
 group :development, :test do
   gem "dotenv-rails"
