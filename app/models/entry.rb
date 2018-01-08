@@ -49,6 +49,7 @@ class Entry < ApplicationRecord
 
   # Scopes
   scope :url, ->(str) { where("url ILIKE ?", "%#{str}%") }
+  scope :har_id, ->(har_id) { where(har_id: har_id) }
 
   # Validations
   validates :started_date_time, presence: true

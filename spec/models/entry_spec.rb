@@ -27,6 +27,16 @@ describe Entry, type: :model do
     end
   end
 
+  describe "#har_id" do
+    it "should only include entries with that har_id" do
+      included_entry = create(:entry)
+      excluded_entry = create(:entry)
+      results = described_class.har_id(included_entry.har_id)
+      expect(results).to include(included_entry)
+      expect(results).not_to include(excluded_entry)
+    end
+  end
+
   it "should have a valid factory" do
     expect(subject).to be_valid
   end
