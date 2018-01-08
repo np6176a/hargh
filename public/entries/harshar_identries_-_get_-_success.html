@@ -126,12 +126,12 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /hars/325/entries</pre>
+          <pre class="request route highlight">GET /hars/31/entries</pre>
 
 
 
             <h4>cURL</h4>
-            <pre class="request curl">curl -g &quot;http://localhost:3000/hars/325/entries&quot; -X GET \
+            <pre class="request curl">curl -g &quot;http://localhost:3000/hars/31/entries&quot; -X GET \
 	-H &quot;Accept: application/json&quot; \
 	-H &quot;Content-Type: application/json&quot; \
 	-H &quot;Host: example.org&quot; \
@@ -140,11 +140,11 @@ Cookie: </pre>
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-ETag: W/&quot;a2eabe9f8106debc38b64343f00d3fd7&quot;
+ETag: W/&quot;d68c318a1b3002d313f112ad0b102363&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 6758c0dd-f298-4405-95e8-8b6983e5acd8
-X-Runtime: 0.009505
-Content-Length: 2455</pre>
+X-Request-Id: 1a64b132-36cc-4483-a431-71cf7f571716
+X-Runtime: 0.023674
+Content-Length: 3337</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
@@ -152,19 +152,22 @@ Content-Length: 2455</pre>
   &quot;entries&quot;: [
     {
       &quot;http_method&quot;: &quot;GET&quot;,
-      &quot;id&quot;: 770,
+      &quot;id&quot;: 73,
       &quot;raw&quot;: {
-        &quot;startedDateTime&quot;: &quot;2018-01-06T22:03:56.670Z&quot;,
-        &quot;time&quot;: -2.935000028926879,
+        &quot;startedDateTime&quot;: &quot;2018-01-06T22:03:56.714Z&quot;,
+        &quot;time&quot;: -2.968999996781349,
         &quot;request&quot;: {
           &quot;method&quot;: &quot;GET&quot;,
-          &quot;url&quot;: &quot;http://www.softwareishard.com/blog/wp-content/themes/miniBits/miniBits/img/wordpress.gif&quot;,
+          &quot;url&quot;: &quot;http://www.softwareishard.com/blog/wp-includes/js/wp-embed.min.js?ver=4.7.8&quot;,
           &quot;httpVersion&quot;: &quot;http/1.1&quot;,
           &quot;headers&quot;: [
 
           ],
           &quot;queryString&quot;: [
-
+            {
+              &quot;name&quot;: &quot;ver&quot;,
+              &quot;value&quot;: &quot;4.7.8&quot;
+            }
           ],
           &quot;cookies&quot;: [
 
@@ -182,8 +185,12 @@ Content-Length: 2455</pre>
               &quot;value&quot;: &quot;Sat, 06 Jan 2018 18:56:37 GMT&quot;
             },
             {
+              &quot;name&quot;: &quot;Content-Encoding&quot;,
+              &quot;value&quot;: &quot;gzip&quot;
+            },
+            {
               &quot;name&quot;: &quot;Last-Modified&quot;,
-              &quot;value&quot;: &quot;Sat, 26 Jun 2010 23:00:00 GMT&quot;
+              &quot;value&quot;: &quot;Wed, 23 Nov 2016 12:38:34 GMT&quot;
             },
             {
               &quot;name&quot;: &quot;Server&quot;,
@@ -191,11 +198,15 @@ Content-Length: 2455</pre>
             },
             {
               &quot;name&quot;: &quot;ETag&quot;,
-              &quot;value&quot;: &quot;\&quot;208-489f6d8da7c00\&quot;&quot;
+              &quot;value&quot;: &quot;\&quot;576-541f72ac78680-gzip\&quot;&quot;
+            },
+            {
+              &quot;name&quot;: &quot;Vary&quot;,
+              &quot;value&quot;: &quot;Accept-Encoding&quot;
             },
             {
               &quot;name&quot;: &quot;Content-Type&quot;,
-              &quot;value&quot;: &quot;image/gif&quot;
+              &quot;value&quot;: &quot;application/javascript&quot;
             },
             {
               &quot;name&quot;: &quot;Cache-Control&quot;,
@@ -207,7 +218,7 @@ Content-Length: 2455</pre>
             },
             {
               &quot;name&quot;: &quot;Content-Length&quot;,
-              &quot;value&quot;: &quot;520&quot;
+              &quot;value&quot;: &quot;751&quot;
             },
             {
               &quot;name&quot;: &quot;Expires&quot;,
@@ -218,10 +229,9 @@ Content-Length: 2455</pre>
 
           ],
           &quot;content&quot;: {
-            &quot;size&quot;: 520,
-            &quot;mimeType&quot;: &quot;image/gif&quot;,
-            &quot;text&quot;: &quot;R0lGODlhGQAcAMQAAPLy8uvr6+/v79jY2M7Ozvb29uDg4Pz8/Obm5tHR0eLi4t7e3vj4+NTU1Nvb2/r6+sDAwMrKyuTk5Ojo6Nzc3NLS0tbW1vT09MbGxsTExMLCwszMzL6+vv7+/r29vf///yH5BAAAAAAALAAAAAAZABwAAAX/4CeO3WiaXXmu3yMoy2IEBWsDQ0NN/LQ0loBtdMgFAAhHo+FQAASWBoBkChAQgAbEw+16EoJARHA6BCDIrXftWVwiwtFjbGCzMUJAZioyzDwQGByBahoYXBMjAwkiDAQdBU8IEBkTAJcvHB4IIh0PBFMKBjUfAF4GIhJdEQelFAEDH1IRNR0RXRglAV4KHwUaAAkHUh6oHxReZAcEuAcPHrA4Ex4RIqZdFiIIXgUCxRQCC6oeU7ZdGyIFah4FAx4OEkzjDiILXQsMIglcaBkeFHUaePOAodVACAga1OOSYJeHCQMiSFEjxBwBezXUbXJHrgGDAQEacFH4wUGxDR56hX1gJsBfhCwfBBADlA8Awi3VSkaY9nABpw5gOP40YJLLlAIJPRAoQKBVzAgMUBIQceAQFwrpOGQo0NAEggSO2MX0kuuDga0DFqxQsLRJhwprhExoR3LFhA0I8hHQwA/OhwAYHg35eDGAgDCH2WIw4HRIqRwJEuQYYEBAY8coChxQgbkz5hAAOw==&quot;,
-            &quot;encoding&quot;: &quot;base64&quot;
+            &quot;size&quot;: 1398,
+            &quot;mimeType&quot;: &quot;application/javascript&quot;,
+            &quot;text&quot;: &quot;!function(a,b){\&quot;use strict\&quot;;function c(){if(!e){e=!0;var a,c,d,f,g=-1!==navigator.appVersion.indexOf(\&quot;MSIE 10\&quot;),h=!!navigator.userAgent.match(/Trident.*rv:11\\./),i=b.querySelectorAll(\&quot;iframe.wp-embedded-content\&quot;);for(c=0;c&lt;i.length;c++){if(d=i[c],!d.getAttribute(\&quot;data-secret\&quot;))f=Math.random().toString(36).substr(2,10),d.src+=\&quot;#?secret=\&quot;+f,d.setAttribute(\&quot;data-secret\&quot;,f);if(g||h)a=d.cloneNode(!0),a.removeAttribute(\&quot;security\&quot;),d.parentNode.replaceChild(a,d)}}}var d=!1,e=!1;if(b.querySelector)if(a.addEventListener)d=!0;if(a.wp=a.wp||{},!a.wp.receiveEmbedMessage)if(a.wp.receiveEmbedMessage=function(c){var d=c.data;if(d.secret||d.message||d.value)if(!/[^a-zA-Z0-9]/.test(d.secret)){var e,f,g,h,i,j=b.querySelectorAll(&#39;iframe[data-secret=\&quot;&#39;+d.secret+&#39;\&quot;]&#39;),k=b.querySelectorAll(&#39;blockquote[data-secret=\&quot;&#39;+d.secret+&#39;\&quot;]&#39;);for(e=0;e&lt;k.length;e++)k[e].style.display=\&quot;none\&quot;;for(e=0;e&lt;j.length;e++)if(f=j[e],c.source===f.contentWindow){if(f.removeAttribute(\&quot;style\&quot;),\&quot;height\&quot;===d.message){if(g=parseInt(d.value,10),g&gt;1e3)g=1e3;else if(~~g&lt;200)g=200;f.height=g}if(\&quot;link\&quot;===d.message)if(h=b.createElement(\&quot;a\&quot;),i=b.createElement(\&quot;a\&quot;),h.href=f.getAttribute(\&quot;src\&quot;),i.href=d.value,i.host===h.host)if(b.activeElement===f)a.top.location.href=d.value}else;}},d)a.addEventListener(\&quot;message\&quot;,a.wp.receiveEmbedMessage,!1),b.addEventListener(\&quot;DOMContentLoaded\&quot;,c,!1),a.addEventListener(\&quot;load\&quot;,c,!1)}(window,document);&quot;
           },
           &quot;redirectURL&quot;: &quot;&quot;,
           &quot;headersSize&quot;: -1,
@@ -236,8 +246,8 @@ Content-Length: 2455</pre>
           &quot;ssl&quot;: -1,
           &quot;connect&quot;: -1,
           &quot;send&quot;: 0,
-          &quot;wait&quot;: 0.037999998312443495,
-          &quot;receive&quot;: 0.026999972760677338,
+          &quot;wait&quot;: 0.02800003858283162,
+          &quot;receive&quot;: 0.0029999646358191967,
           &quot;_blocked_queueing&quot;: -1
         },
         &quot;serverIPAddress&quot;: &quot;[2a00:1ed0:2:0:1:5bef:c83b:1]&quot;,
@@ -245,18 +255,18 @@ Content-Length: 2455</pre>
         &quot;pageref&quot;: &quot;page_1&quot;
       },
       &quot;response_content_mime_type&quot;: &quot;application/javascript&quot;,
-      &quot;response_content_size&quot;: &quot;3808.63398991752&quot;,
-      &quot;response_status&quot;: 500,
-      &quot;started_date_time&quot;: &quot;2018-01-08T03:01:39.241Z&quot;,
-      &quot;time&quot;: &quot;102.886502129726&quot;,
-      &quot;timings_blocked&quot;: &quot;3241.11558074768&quot;,
-      &quot;timings_connect&quot;: &quot;872.581829796433&quot;,
-      &quot;timings_dns&quot;: &quot;1153.26590041657&quot;,
-      &quot;timings_receive&quot;: &quot;1645.00104440086&quot;,
-      &quot;timings_send&quot;: &quot;4621.58060458355&quot;,
-      &quot;timings_ssl&quot;: &quot;1751.24857886696&quot;,
-      &quot;timings_wait&quot;: &quot;817.598256557799&quot;,
-      &quot;url&quot;: &quot;http://thieldickens.io/libbie&quot;
+      &quot;response_content_size&quot;: &quot;4830.0113490708&quot;,
+      &quot;response_status&quot;: 201,
+      &quot;started_date_time&quot;: &quot;2018-01-08T04:29:23.971Z&quot;,
+      &quot;time&quot;: &quot;2654.26320315185&quot;,
+      &quot;timings_blocked&quot;: &quot;128.323382692085&quot;,
+      &quot;timings_connect&quot;: &quot;4642.96141138163&quot;,
+      &quot;timings_dns&quot;: &quot;919.76431301409&quot;,
+      &quot;timings_receive&quot;: &quot;1725.94756269897&quot;,
+      &quot;timings_send&quot;: &quot;688.622005674396&quot;,
+      &quot;timings_ssl&quot;: &quot;2754.65316997584&quot;,
+      &quot;timings_wait&quot;: &quot;3987.03208368049&quot;,
+      &quot;url&quot;: &quot;http://huelsweinat.name/nina.price&quot;
     }
   ]
 }</pre>

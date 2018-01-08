@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Entries API</title>
+    <title>Hars API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,13 +106,13 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Entries API</h1>
+      <h1>Hars API</h1>
 
       <div class="article">
-        <h2>/hars/:har_id/entries/aggregations - GET - Success</h2>
-        <h3>GET /hars/:har_id/entries/aggregations</h3>
+        <h2>/hars/:id - DELETE - Success</h2>
+        <h3>DELETE /hars/:id</h3>
           <p class="explanation">
-            Allows you to sum and average values across numerical columns
+            Allows you to delte a HAR
           </p>
 
 
@@ -126,15 +126,12 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /hars/324/entries/aggregations?operation=sum&amp;column_name=timings_dns</pre>
+          <pre class="request route highlight">DELETE /hars/35</pre>
 
-            <h4>Query Parameters</h4>
-            <pre class="request query_parameters highlight">operation: sum
-column_name: timings_dns</pre>
 
 
             <h4>cURL</h4>
-            <pre class="request curl">curl -g &quot;http://localhost:3000/hars/324/entries/aggregations?operation=sum&amp;column_name=timings_dns&quot; -X GET \
+            <pre class="request curl">curl &quot;http://localhost:3000/hars/35&quot; -d &#39;&#39; -X DELETE \
 	-H &quot;Accept: application/json&quot; \
 	-H &quot;Content-Type: application/json&quot; \
 	-H &quot;Host: example.org&quot; \
@@ -142,18 +139,11 @@ column_name: timings_dns</pre>
 
             <h3>Response</h3>
               <h4>Headers</h4>
-              <pre class="response headers">Content-Type: application/json; charset=utf-8
-ETag: W/&quot;901a8ef7cde002848732b1b0ab0251c7&quot;
-Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: a0916196-e16b-4cd2-b098-8e657be983be
-X-Runtime: 0.031144
-Content-Length: 15</pre>
+              <pre class="response headers">Cache-Control: no-cache
+X-Request-Id: adb07ca2-dbf8-4758-8919-34501baf9e90
+X-Runtime: 0.064475</pre>
             <h4>Status</h4>
-            <pre class="response status">200 OK</pre>
-              <h4>Body</h4>
-              <pre class="response body">{
-  &quot;value&quot;: &quot;4.0&quot;
-}</pre>
+            <pre class="response status">204 No Content</pre>
       </div>
     </div>
   </body>

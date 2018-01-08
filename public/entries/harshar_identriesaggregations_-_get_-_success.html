@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hars API</title>
+    <title>Entries API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,13 +106,13 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Hars API</h1>
+      <h1>Entries API</h1>
 
       <div class="article">
-        <h2>/hars/:id - DELETE - Success</h2>
-        <h3>DELETE /hars/:id</h3>
+        <h2>/hars/:har_id/entries/aggregations - GET - Success</h2>
+        <h3>GET /hars/:har_id/entries/aggregations</h3>
           <p class="explanation">
-            Allows you to delte a HAR
+            Allows you to sum and average values across numerical columns
           </p>
 
 
@@ -126,12 +126,15 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">DELETE /hars/327</pre>
+          <pre class="request route highlight">GET /hars/32/entries/aggregations?operation=sum&amp;column_name=timings_dns</pre>
 
+            <h4>Query Parameters</h4>
+            <pre class="request query_parameters highlight">operation: sum
+column_name: timings_dns</pre>
 
 
             <h4>cURL</h4>
-            <pre class="request curl">curl &quot;http://localhost:3000/hars/327&quot; -d &#39;&#39; -X DELETE \
+            <pre class="request curl">curl -g &quot;http://localhost:3000/hars/32/entries/aggregations?operation=sum&amp;column_name=timings_dns&quot; -X GET \
 	-H &quot;Accept: application/json&quot; \
 	-H &quot;Content-Type: application/json&quot; \
 	-H &quot;Host: example.org&quot; \
@@ -139,11 +142,18 @@ Cookie: </pre>
 
             <h3>Response</h3>
               <h4>Headers</h4>
-              <pre class="response headers">Cache-Control: no-cache
-X-Request-Id: 9509ddee-a21b-4c96-8ffd-d16ec5187428
-X-Runtime: 0.067997</pre>
+              <pre class="response headers">Content-Type: application/json; charset=utf-8
+ETag: W/&quot;901a8ef7cde002848732b1b0ab0251c7&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: b871da30-c5bd-481c-8dfc-eda9464585c6
+X-Runtime: 0.006127
+Content-Length: 15</pre>
             <h4>Status</h4>
-            <pre class="response status">204 No Content</pre>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;value&quot;: &quot;4.0&quot;
+}</pre>
       </div>
     </div>
   </body>

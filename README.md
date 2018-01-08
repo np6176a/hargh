@@ -118,7 +118,7 @@ Heroku deploy button below.
 ## API Docs
 
 If you want to see the current API docs, you can check them out on the
-deployed [Heroku Instance](https://hargh.herokuapp.com/docs)
+deployed [Heroku Instance](https://hargh.herokuapp.com)
 
 ## Loading HAR files
 

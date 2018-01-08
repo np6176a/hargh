@@ -126,7 +126,7 @@ PreCommit:
     quiet: false
     exclude: &default_excludes
       - 'vendor/**/*'
-      - 'public/docs/**/*'
+      - 'public/**/*'
 
   AuthorEmail:
     enabled: true
@@ -649,7 +649,7 @@ PreCommit:
     flags: ['-IHn', "[ \t]$"]
     exclude:
       - 'doc/dependency_decisions.yml'
-      - 'public/docs/**/*'
+      - 'public/**/*'
 
   TravisLint:
     enabled: false

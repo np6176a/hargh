@@ -7,7 +7,7 @@ RspecApiDocumentation.configure do |config|
   config.format                  = [:html]
   config.curl_host               = ENV.fetch("HOST_API")
   config.request_body_formatter  = :json
-  config.docs_dir = Rails.root.join("public", "docs")
+  config.docs_dir = Rails.root.join("public")
 end
 
 RSpec.configure do |config|
