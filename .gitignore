@@ -22,7 +22,7 @@ coverage
 .env
 
 # Don't commit API Docs
-doc
+public/docs
 
 # Ignore rspec failures file
 spec/examples.txt
