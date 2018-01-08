@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entries API</title>
+    <meta charset="utf-8">
+    <style>
+      
+body {
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  color: #404040;
+}
+
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  zoom: 1;
+}
+
+pre {
+  background-color: #f5f5f5;
+  display: block;
+  padding: 8.5px;
+  margin: 0 0 18px;
+  line-height: 18px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+td.required .name:after {
+  float: right;
+  content: "required";
+  font-weight: normal;
+  color: #F08080;
+}
+
+a{
+  color: #0069d6;
+  text-decoration: none;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #404040;
+}
+
+h1 {
+  margin-bottom: 18px;
+  font-size: 30px;
+  line-height: 36px;
+}
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+}
+h3{
+  font-size: 18px;
+  line-height: 36px;
+}
+h4 {
+  font-size: 16px;
+  line-height: 36px;
+}
+
+table{
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  font-size: 13px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+}
+
+table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+table th+th, table td+td {
+  border-left: 1px solid #ddd;
+}
+table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Entries API</h1>
+
+      <div class="article">
+        <h2>/hars/:har_id/entries - GET - Success</h2>
+        <h3>GET /hars/:har_id/entries</h3>
+          <p class="explanation">
+            Allows you to search entries
+          </p>
+
+
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Accept: application/json
+Content-Type: application/json
+Host: example.org
+Cookie: </pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /hars/325/entries</pre>
+
+
+
+            <h4>cURL</h4>
+            <pre class="request curl">curl -g &quot;http://localhost:3000/hars/325/entries&quot; -X GET \
+	-H &quot;Accept: application/json&quot; \
+	-H &quot;Content-Type: application/json&quot; \
+	-H &quot;Host: example.org&quot; \
+	-H &quot;Cookie: &quot;</pre>
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json; charset=utf-8
+ETag: W/&quot;a2eabe9f8106debc38b64343f00d3fd7&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 6758c0dd-f298-4405-95e8-8b6983e5acd8
+X-Runtime: 0.009505
+Content-Length: 2455</pre>
+            <h4>Status</h4>
+            <pre class="response status">200 OK</pre>
+              <h4>Body</h4>
+              <pre class="response body">{
+  &quot;entries&quot;: [
+    {
+      &quot;http_method&quot;: &quot;GET&quot;,
+      &quot;id&quot;: 770,
+      &quot;raw&quot;: {
+        &quot;startedDateTime&quot;: &quot;2018-01-06T22:03:56.670Z&quot;,
+        &quot;time&quot;: -2.935000028926879,
+        &quot;request&quot;: {
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;url&quot;: &quot;http://www.softwareishard.com/blog/wp-content/themes/miniBits/miniBits/img/wordpress.gif&quot;,
+          &quot;httpVersion&quot;: &quot;http/1.1&quot;,
+          &quot;headers&quot;: [
+
+          ],
+          &quot;queryString&quot;: [
+
+          ],
+          &quot;cookies&quot;: [
+
+          ],
+          &quot;headersSize&quot;: -1,
+          &quot;bodySize&quot;: 0
+        },
+        &quot;response&quot;: {
+          &quot;status&quot;: 200,
+          &quot;statusText&quot;: &quot;OK&quot;,
+          &quot;httpVersion&quot;: &quot;http/1.1&quot;,
+          &quot;headers&quot;: [
+            {
+              &quot;name&quot;: &quot;Date&quot;,
+              &quot;value&quot;: &quot;Sat, 06 Jan 2018 18:56:37 GMT&quot;
+            },
+            {
+              &quot;name&quot;: &quot;Last-Modified&quot;,
+              &quot;value&quot;: &quot;Sat, 26 Jun 2010 23:00:00 GMT&quot;
+            },
+            {
+              &quot;name&quot;: &quot;Server&quot;,
+              &quot;value&quot;: &quot;Apache/2.4.10 (Debian)&quot;
+            },
+            {
+              &quot;name&quot;: &quot;ETag&quot;,
+              &quot;value&quot;: &quot;\&quot;208-489f6d8da7c00\&quot;&quot;
+            },
+            {
+              &quot;name&quot;: &quot;Content-Type&quot;,
+              &quot;value&quot;: &quot;image/gif&quot;
+            },
+            {
+              &quot;name&quot;: &quot;Cache-Control&quot;,
+              &quot;value&quot;: &quot;max-age=1209600&quot;
+            },
+            {
+              &quot;name&quot;: &quot;Accept-Ranges&quot;,
+              &quot;value&quot;: &quot;bytes&quot;
+            },
+            {
+              &quot;name&quot;: &quot;Content-Length&quot;,
+              &quot;value&quot;: &quot;520&quot;
+            },
+            {
+              &quot;name&quot;: &quot;Expires&quot;,
+              &quot;value&quot;: &quot;Sat, 20 Jan 2018 18:56:37 GMT&quot;
+            }
+          ],
+          &quot;cookies&quot;: [
+
+          ],
+          &quot;content&quot;: {
+            &quot;size&quot;: 520,
+            &quot;mimeType&quot;: &quot;image/gif&quot;,
+            &quot;text&quot;: &quot;R0lGODlhGQAcAMQAAPLy8uvr6+/v79jY2M7Ozvb29uDg4Pz8/Obm5tHR0eLi4t7e3vj4+NTU1Nvb2/r6+sDAwMrKyuTk5Ojo6Nzc3NLS0tbW1vT09MbGxsTExMLCwszMzL6+vv7+/r29vf///yH5BAAAAAAALAAAAAAZABwAAAX/4CeO3WiaXXmu3yMoy2IEBWsDQ0NN/LQ0loBtdMgFAAhHo+FQAASWBoBkChAQgAbEw+16EoJARHA6BCDIrXftWVwiwtFjbGCzMUJAZioyzDwQGByBahoYXBMjAwkiDAQdBU8IEBkTAJcvHB4IIh0PBFMKBjUfAF4GIhJdEQelFAEDH1IRNR0RXRglAV4KHwUaAAkHUh6oHxReZAcEuAcPHrA4Ex4RIqZdFiIIXgUCxRQCC6oeU7ZdGyIFah4FAx4OEkzjDiILXQsMIglcaBkeFHUaePOAodVACAga1OOSYJeHCQMiSFEjxBwBezXUbXJHrgGDAQEacFH4wUGxDR56hX1gJsBfhCwfBBADlA8Awi3VSkaY9nABpw5gOP40YJLLlAIJPRAoQKBVzAgMUBIQceAQFwrpOGQo0NAEggSO2MX0kuuDga0DFqxQsLRJhwprhExoR3LFhA0I8hHQwA/OhwAYHg35eDGAgDCH2WIw4HRIqRwJEuQYYEBAY8coChxQgbkz5hAAOw==&quot;,
+            &quot;encoding&quot;: &quot;base64&quot;
+          },
+          &quot;redirectURL&quot;: &quot;&quot;,
+          &quot;headersSize&quot;: -1,
+          &quot;bodySize&quot;: 0,
+          &quot;_transferSize&quot;: 0
+        },
+        &quot;cache&quot;: {
+        },
+        &quot;timings&quot;: {
+          &quot;blocked&quot;: -1,
+          &quot;dns&quot;: -1,
+          &quot;ssl&quot;: -1,
+          &quot;connect&quot;: -1,
+          &quot;send&quot;: 0,
+          &quot;wait&quot;: 0.037999998312443495,
+          &quot;receive&quot;: 0.026999972760677338,
+          &quot;_blocked_queueing&quot;: -1
+        },
+        &quot;serverIPAddress&quot;: &quot;[2a00:1ed0:2:0:1:5bef:c83b:1]&quot;,
+        &quot;_fromCache&quot;: &quot;memory&quot;,
+        &quot;pageref&quot;: &quot;page_1&quot;
+      },
+      &quot;response_content_mime_type&quot;: &quot;application/javascript&quot;,
+      &quot;response_content_size&quot;: &quot;3808.63398991752&quot;,
+      &quot;response_status&quot;: 500,
+      &quot;started_date_time&quot;: &quot;2018-01-08T03:01:39.241Z&quot;,
+      &quot;time&quot;: &quot;102.886502129726&quot;,
+      &quot;timings_blocked&quot;: &quot;3241.11558074768&quot;,
+      &quot;timings_connect&quot;: &quot;872.581829796433&quot;,
+      &quot;timings_dns&quot;: &quot;1153.26590041657&quot;,
+      &quot;timings_receive&quot;: &quot;1645.00104440086&quot;,
+      &quot;timings_send&quot;: &quot;4621.58060458355&quot;,
+      &quot;timings_ssl&quot;: &quot;1751.24857886696&quot;,
+      &quot;timings_wait&quot;: &quot;817.598256557799&quot;,
+      &quot;url&quot;: &quot;http://thieldickens.io/libbie&quot;
+    }
+  ]
+}</pre>
+      </div>
+    </div>
+  </body>
+</html>

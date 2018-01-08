@@ -15,6 +15,7 @@
 * [Known Limitations](#known-limitations)
 * [Running Locally](#running-locally)
 * [Deployment](#deployment)
+* [API Docs](#api-docs)
 * [License](#license)
 
 ## Overview
@@ -113,6 +114,11 @@ If you don't want to bother with a local setup for now, just use the
 Heroku deploy button below.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+## API Docs
+
+If you want to see the current API docs, you can check them out on the
+deployed [Heroku Instance](https://hargh.herokuapp.com/docs)
 
 # License
 

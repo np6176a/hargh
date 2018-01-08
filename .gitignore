@@ -21,9 +21,6 @@ coverage
 # Ignore ENV files
 .env
 
-# Don't commit API Docs
-public/docs
-
 # Ignore rspec failures file
 spec/examples.txt
 
