@@ -16,6 +16,4 @@ json.call(entry,
           :timings_send,
           :timings_ssl,
           :timings_wait,
-          :url
-)
-
+          :url)

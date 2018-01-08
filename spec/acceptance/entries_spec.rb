@@ -11,8 +11,8 @@ resource "Entries" do
       expect(status).to eq(200)
       json = JSON.parse(response_body).with_indifferent_access
       expect(json.fetch(:entries).size).to eq(1)
-      schema = EntriesIndexSchema.call(json)
-      expect(schema.success?).to eq(true)
+      result_entry = json[:entries].first
+      expect(result_entry[:id]).to eq(entry.id)
     end
   end
 end
