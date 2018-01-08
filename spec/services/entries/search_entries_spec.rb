@@ -6,8 +6,13 @@ describe Entries::SearchEntries do
     included_entry_two = create(:entry, url: "ab")
     excluded_entry_one = create(:entry, url: "ac")
     excluded_entry_two = create(:entry, url: "c")
-    params = { url: "a", sort: "url", direction: "asc", offset: 0, limit: 2 }
-    result = described_class.call(params: params)
+    result = described_class.call(params: {
+      direction: "asc",
+      limit: 2,
+      offset: 0,
+      sort: "url",
+      url: "a"
+    }.with_indifferent_access)
     query = result.fetch(:entries_query)
     expect(query).to include(included_entry_one)
     expect(query).to include(included_entry_two)
