@@ -44,6 +44,18 @@
 class Entry < ApplicationRecord
   serialize :raw
 
+  NUMERICAL_COLUMNS = %w(
+    time
+    response_content_size
+    timings_blocked
+    timings_dns
+    timings_ssl
+    timings_connect
+    timings_send
+    timings_wait
+    timings_receive
+  ).freeze
+
   # Associations
   belongs_to :har, inverse_of: :entries, counter_cache: true
 
