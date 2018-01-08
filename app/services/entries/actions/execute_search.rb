@@ -7,7 +7,7 @@ class Entries::Actions::ExecuteSearch
     filterable_params = context.params.slice(*Entry.filterable_column_names)
     context.entries_query = Entry
       .filter(filterable_params)
-      .order(sort_column(context.params) => sort_direction(context.params))
+      .order("#{sort_column(context.params)} #{sort_direction(context.params)} NULLS LAST")
   end
 
   def self.sort_column(params)
