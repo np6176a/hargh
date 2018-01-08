@@ -14,6 +14,10 @@ resource "Hars" do
   end
 
   get "/hars/:id" do
+    with_options scope: :har do
+      har_response_fields
+    end
+
     example "/hars/:id - GET - Success" do
       explanation "Allows you to retrieve a Har"
       har = create(:har)
@@ -29,8 +33,12 @@ resource "Hars" do
   end
 
   patch "/hars/:id" do
+    with_options scope: :har do
+      har_response_fields
+    end
+
     example "/hars/id - PATCH - Success" do
-      explanation "Allows you update and replace a HAR"
+      explanation "Allows you update and replace a HAR. Parameters should just be the data of the HAR"
       har = create(:har)
       comment = "Changed Comment"
       patch_data = SAMPLE_RAW_DATA.merge(id: har.id)

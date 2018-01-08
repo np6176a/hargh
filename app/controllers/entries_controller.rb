@@ -34,12 +34,12 @@ class EntriesController < ApplicationController
 
   def aggregations_params
     params.permit(
+      column_name: ActionController::Parameters.enum(*Entry::NUMERICAL_COLUMNS),
       har_id:      ActionController::Parameters.id,
       limit:       ActionController::Parameters.integer,
       offset:      ActionController::Parameters.integer,
-      url:         ActionController::Parameters.string,
       operation: ActionController::Parameters.enum("sum", "average"),
-      column_name: ActionController::Parameters.enum(*Entry::NUMERICAL_COLUMNS)
+      url:         ActionController::Parameters.string
     )
   end
 end

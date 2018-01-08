@@ -115,7 +115,197 @@ table th, table td {
             Allows you to search entries
           </p>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">direction</span>
+                </td>
+                <td>
+                  <span class="description">Direction (Must be &#39;asc&#39; or &#39;desc&#39;)</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">limit</span>
+                </td>
+                <td>
+                  <span class="description">Limit</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">offset</span>
+                </td>
+                <td>
+                  <span class="description">Offset</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">url</span>
+                </td>
+                <td>
+                  <span class="description">URL or fragment to search on</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">sort</span>
+                </td>
+                <td>
+                  <span class="description">Columns to sort on (Must be one of id, started_date_time, time, http_method, url, response_status, response_content_size, response_content_mime_type, timings_blocked, timings_dns, timings_ssl, timings_connect, timings_send, timings_wait, timings_receive, raw, created_at, updated_at, har_id)</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">entries[id]</span>
+                </td>
+                <td>
+                  <span class="description">ID</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[raw]</span>
+                </td>
+                <td>
+                  <span class="description">Original Data Sent</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[http_method]</span>
+                </td>
+                <td>
+                  <span class="description">HTTP Method</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[response_content_mime_type]</span>
+                </td>
+                <td>
+                  <span class="description">Response Content Mime Type</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[response_content_size]</span>
+                </td>
+                <td>
+                  <span class="description">Response Content Size</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[response_status]</span>
+                </td>
+                <td>
+                  <span class="description">Response Status</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[started_date_time]</span>
+                </td>
+                <td>
+                  <span class="description">Started Date Time</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[time]</span>
+                </td>
+                <td>
+                  <span class="description">Time</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[timings_blocked]</span>
+                </td>
+                <td>
+                  <span class="description">Timings Blocked</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[timings_connect]</span>
+                </td>
+                <td>
+                  <span class="description">Timings Connect</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[timings_dns]</span>
+                </td>
+                <td>
+                  <span class="description">Timings DNS</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[timings_receive]</span>
+                </td>
+                <td>
+                  <span class="description">Timings Receive</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[timings_send]</span>
+                </td>
+                <td>
+                  <span class="description">Timings Send</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[timings_ssl]</span>
+                </td>
+                <td>
+                  <span class="description">Timings SSL</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[timings_wait]</span>
+                </td>
+                <td>
+                  <span class="description">Timings Wait</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">entries[url]</span>
+                </td>
+                <td>
+                  <span class="description">URL</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
           <h3>Request</h3>
 
@@ -126,12 +316,12 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /hars/31/entries</pre>
+          <pre class="request route highlight">GET /hars/72/entries</pre>
 
 
 
             <h4>cURL</h4>
-            <pre class="request curl">curl -g &quot;http://localhost:3000/hars/31/entries&quot; -X GET \
+            <pre class="request curl">curl -g &quot;http://localhost:3000/hars/72/entries&quot; -X GET \
 	-H &quot;Accept: application/json&quot; \
 	-H &quot;Content-Type: application/json&quot; \
 	-H &quot;Host: example.org&quot; \
@@ -140,11 +330,11 @@ Cookie: </pre>
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-ETag: W/&quot;d68c318a1b3002d313f112ad0b102363&quot;
+ETag: W/&quot;1eac7a3faf51b9e8b8b7c4a09016e96f&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 1a64b132-36cc-4483-a431-71cf7f571716
-X-Runtime: 0.023674
-Content-Length: 3337</pre>
+X-Request-Id: cee0efdd-96ed-46e0-b257-6616fe4c2c84
+X-Runtime: 0.012631
+Content-Length: 28793</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
@@ -152,22 +342,26 @@ Content-Length: 3337</pre>
   &quot;entries&quot;: [
     {
       &quot;http_method&quot;: &quot;GET&quot;,
-      &quot;id&quot;: 73,
+      &quot;id&quot;: 210,
       &quot;raw&quot;: {
-        &quot;startedDateTime&quot;: &quot;2018-01-06T22:03:56.714Z&quot;,
-        &quot;time&quot;: -2.968999996781349,
+        &quot;startedDateTime&quot;: &quot;2018-01-06T22:03:56.751Z&quot;,
+        &quot;time&quot;: 5.674138993141241,
         &quot;request&quot;: {
           &quot;method&quot;: &quot;GET&quot;,
-          &quot;url&quot;: &quot;http://www.softwareishard.com/blog/wp-includes/js/wp-embed.min.js?ver=4.7.8&quot;,
-          &quot;httpVersion&quot;: &quot;http/1.1&quot;,
+          &quot;url&quot;: &quot;https://www.google-analytics.com/urchin.js&quot;,
+          &quot;httpVersion&quot;: &quot;http/2.0+quic/39&quot;,
           &quot;headers&quot;: [
-
+            {
+              &quot;name&quot;: &quot;Referer&quot;,
+              &quot;value&quot;: &quot;http://www.softwareishard.com/blog/har-12-spec/&quot;
+            },
+            {
+              &quot;name&quot;: &quot;User-Agent&quot;,
+              &quot;value&quot;: &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36&quot;
+            }
           ],
           &quot;queryString&quot;: [
-            {
-              &quot;name&quot;: &quot;ver&quot;,
-              &quot;value&quot;: &quot;4.7.8&quot;
-            }
+
           ],
           &quot;cookies&quot;: [
 
@@ -177,61 +371,69 @@ Content-Length: 3337</pre>
         },
         &quot;response&quot;: {
           &quot;status&quot;: 200,
-          &quot;statusText&quot;: &quot;OK&quot;,
-          &quot;httpVersion&quot;: &quot;http/1.1&quot;,
+          &quot;statusText&quot;: &quot;&quot;,
+          &quot;httpVersion&quot;: &quot;http/2.0+quic/39&quot;,
           &quot;headers&quot;: [
             {
-              &quot;name&quot;: &quot;Date&quot;,
-              &quot;value&quot;: &quot;Sat, 06 Jan 2018 18:56:37 GMT&quot;
+              &quot;name&quot;: &quot;date&quot;,
+              &quot;value&quot;: &quot;Fri, 05 Jan 2018 09:09:45 GMT&quot;
             },
             {
-              &quot;name&quot;: &quot;Content-Encoding&quot;,
+              &quot;name&quot;: &quot;content-encoding&quot;,
               &quot;value&quot;: &quot;gzip&quot;
             },
             {
-              &quot;name&quot;: &quot;Last-Modified&quot;,
-              &quot;value&quot;: &quot;Wed, 23 Nov 2016 12:38:34 GMT&quot;
+              &quot;name&quot;: &quot;x-content-type-options&quot;,
+              &quot;value&quot;: &quot;nosniff&quot;
             },
             {
-              &quot;name&quot;: &quot;Server&quot;,
-              &quot;value&quot;: &quot;Apache/2.4.10 (Debian)&quot;
+              &quot;name&quot;: &quot;last-modified&quot;,
+              &quot;value&quot;: &quot;Mon, 13 Nov 2017 20:19:12 GMT&quot;
             },
             {
-              &quot;name&quot;: &quot;ETag&quot;,
-              &quot;value&quot;: &quot;\&quot;576-541f72ac78680-gzip\&quot;&quot;
+              &quot;name&quot;: &quot;server&quot;,
+              &quot;value&quot;: &quot;Golfe2&quot;
             },
             {
-              &quot;name&quot;: &quot;Vary&quot;,
+              &quot;name&quot;: &quot;age&quot;,
+              &quot;value&quot;: &quot;121612&quot;
+            },
+            {
+              &quot;name&quot;: &quot;vary&quot;,
               &quot;value&quot;: &quot;Accept-Encoding&quot;
             },
             {
-              &quot;name&quot;: &quot;Content-Type&quot;,
-              &quot;value&quot;: &quot;application/javascript&quot;
+              &quot;name&quot;: &quot;content-type&quot;,
+              &quot;value&quot;: &quot;text/javascript&quot;
             },
             {
-              &quot;name&quot;: &quot;Cache-Control&quot;,
-              &quot;value&quot;: &quot;max-age=1209600&quot;
+              &quot;name&quot;: &quot;status&quot;,
+              &quot;value&quot;: &quot;200&quot;
             },
             {
-              &quot;name&quot;: &quot;Accept-Ranges&quot;,
-              &quot;value&quot;: &quot;bytes&quot;
+              &quot;name&quot;: &quot;cache-control&quot;,
+              &quot;value&quot;: &quot;public, max-age=1209600&quot;
             },
             {
-              &quot;name&quot;: &quot;Content-Length&quot;,
-              &quot;value&quot;: &quot;751&quot;
+              &quot;name&quot;: &quot;alt-svc&quot;,
+              &quot;value&quot;: &quot;hq=\&quot;:443\&quot;; ma=2592000; quic=51303431; quic=51303339; quic=51303338; quic=51303337; quic=51303335,quic=\&quot;:443\&quot;; ma=2592000; v=\&quot;41,39,38,37,35\&quot;&quot;
             },
             {
-              &quot;name&quot;: &quot;Expires&quot;,
-              &quot;value&quot;: &quot;Sat, 20 Jan 2018 18:56:37 GMT&quot;
+              &quot;name&quot;: &quot;content-length&quot;,
+              &quot;value&quot;: &quot;6847&quot;
+            },
+            {
+              &quot;name&quot;: &quot;expires&quot;,
+              &quot;value&quot;: &quot;Fri, 19 Jan 2018 09:09:45 GMT&quot;
             }
           ],
           &quot;cookies&quot;: [
 
           ],
           &quot;content&quot;: {
-            &quot;size&quot;: 1398,
-            &quot;mimeType&quot;: &quot;application/javascript&quot;,
-            &quot;text&quot;: &quot;!function(a,b){\&quot;use strict\&quot;;function c(){if(!e){e=!0;var a,c,d,f,g=-1!==navigator.appVersion.indexOf(\&quot;MSIE 10\&quot;),h=!!navigator.userAgent.match(/Trident.*rv:11\\./),i=b.querySelectorAll(\&quot;iframe.wp-embedded-content\&quot;);for(c=0;c&lt;i.length;c++){if(d=i[c],!d.getAttribute(\&quot;data-secret\&quot;))f=Math.random().toString(36).substr(2,10),d.src+=\&quot;#?secret=\&quot;+f,d.setAttribute(\&quot;data-secret\&quot;,f);if(g||h)a=d.cloneNode(!0),a.removeAttribute(\&quot;security\&quot;),d.parentNode.replaceChild(a,d)}}}var d=!1,e=!1;if(b.querySelector)if(a.addEventListener)d=!0;if(a.wp=a.wp||{},!a.wp.receiveEmbedMessage)if(a.wp.receiveEmbedMessage=function(c){var d=c.data;if(d.secret||d.message||d.value)if(!/[^a-zA-Z0-9]/.test(d.secret)){var e,f,g,h,i,j=b.querySelectorAll(&#39;iframe[data-secret=\&quot;&#39;+d.secret+&#39;\&quot;]&#39;),k=b.querySelectorAll(&#39;blockquote[data-secret=\&quot;&#39;+d.secret+&#39;\&quot;]&#39;);for(e=0;e&lt;k.length;e++)k[e].style.display=\&quot;none\&quot;;for(e=0;e&lt;j.length;e++)if(f=j[e],c.source===f.contentWindow){if(f.removeAttribute(\&quot;style\&quot;),\&quot;height\&quot;===d.message){if(g=parseInt(d.value,10),g&gt;1e3)g=1e3;else if(~~g&lt;200)g=200;f.height=g}if(\&quot;link\&quot;===d.message)if(h=b.createElement(\&quot;a\&quot;),i=b.createElement(\&quot;a\&quot;),h.href=f.getAttribute(\&quot;src\&quot;),i.href=d.value,i.host===h.host)if(b.activeElement===f)a.top.location.href=d.value}else;}},d)a.addEventListener(\&quot;message\&quot;,a.wp.receiveEmbedMessage,!1),b.addEventListener(\&quot;DOMContentLoaded\&quot;,c,!1),a.addEventListener(\&quot;load\&quot;,c,!1)}(window,document);&quot;
+            &quot;size&quot;: 22678,
+            &quot;mimeType&quot;: &quot;text/javascript&quot;,
+            &quot;text&quot;: &quot;//-- Google Analytics Urchin Module\n//-- Copyright 2007 Google, All Rights Reserved.\n\n//-- Urchin On Demand Settings ONLY\nvar _uacct=\&quot;\&quot;;\t\t\t// set up the Urchin Account\nvar _userv=1;\t\t\t// service mode (0=local,1=remote,2=both)\n\n//-- UTM User Settings\nvar _ufsc=1;\t\t\t// set client info flag (1=on|0=off)\nvar _udn=\&quot;auto\&quot;;\t\t// (auto|none|domain) set the domain name for cookies\nvar _uhash=\&quot;on\&quot;;\t\t// (on|off) unique domain hash for cookies\nvar _utimeout=\&quot;1800\&quot;;   \t// set the inactive session timeout in seconds\nvar _ugifpath=\&quot;/__utm.gif\&quot;;\t// set the web path to the __utm.gif file\nvar _utsp=\&quot;|\&quot;;\t\t\t// transaction field separator\nvar _uflash=1;\t\t\t// set flash version detect option (1=on|0=off)\nvar _utitle=1;\t\t\t// set the document title detect option (1=on|0=off)\nvar _ulink=0;\t\t\t// enable linker functionality (1=on|0=off)\nvar _uanchor=0;\t\t\t// enable use of anchors for campaign (1=on|0=off)\nvar _utcp=\&quot;/\&quot;;\t\t\t// the cookie path for tracking\nvar _usample=100;\t\t// The sampling % of visitors to track (1-100).\n\n//-- UTM Campaign Tracking Settings\nvar _uctm=1;\t\t\t// set campaign tracking module (1=on|0=off)\nvar _ucto=\&quot;15768000\&quot;;\t\t// set timeout in seconds (6 month default)\nvar _uccn=\&quot;utm_campaign\&quot;;\t// name\nvar _ucmd=\&quot;utm_medium\&quot;;\t\t// medium (cpc|cpm|link|email|organic)\nvar _ucsr=\&quot;utm_source\&quot;;\t\t// source\nvar _uctr=\&quot;utm_term\&quot;;\t\t// term/keyword\nvar _ucct=\&quot;utm_content\&quot;;\t// content\nvar _ucid=\&quot;utm_id\&quot;;\t\t// id number\nvar _ucno=\&quot;utm_nooverride\&quot;;\t// don&#39;t override\n\n//-- Auto/Organic Sources and Keywords\nvar _uOsr=new Array();\nvar _uOkw=new Array();\n_uOsr[0]=\&quot;google\&quot;;\t_uOkw[0]=\&quot;q\&quot;;\n_uOsr[1]=\&quot;yahoo\&quot;;\t_uOkw[1]=\&quot;p\&quot;;\n_uOsr[2]=\&quot;msn\&quot;;\t\t_uOkw[2]=\&quot;q\&quot;;\n_uOsr[3]=\&quot;aol\&quot;;\t\t_uOkw[3]=\&quot;query\&quot;;\n_uOsr[4]=\&quot;aol\&quot;;\t\t_uOkw[4]=\&quot;encquery\&quot;;\n_uOsr[5]=\&quot;lycos\&quot;;\t_uOkw[5]=\&quot;query\&quot;;\n_uOsr[6]=\&quot;ask\&quot;;\t\t_uOkw[6]=\&quot;q\&quot;;\n_uOsr[7]=\&quot;altavista\&quot;;\t_uOkw[7]=\&quot;q\&quot;;\n_uOsr[8]=\&quot;netscape\&quot;;\t_uOkw[8]=\&quot;query\&quot;;\n_uOsr[9]=\&quot;cnn\&quot;;\t_uOkw[9]=\&quot;query\&quot;;\n_uOsr[10]=\&quot;looksmart\&quot;;\t_uOkw[10]=\&quot;qt\&quot;;\n_uOsr[11]=\&quot;about\&quot;;\t_uOkw[11]=\&quot;terms\&quot;;\n_uOsr[12]=\&quot;mamma\&quot;;\t_uOkw[12]=\&quot;query\&quot;;\n_uOsr[13]=\&quot;alltheweb\&quot;;\t_uOkw[13]=\&quot;q\&quot;;\n_uOsr[14]=\&quot;gigablast\&quot;;\t_uOkw[14]=\&quot;q\&quot;;\n_uOsr[15]=\&quot;voila\&quot;;\t_uOkw[15]=\&quot;rdata\&quot;;\n_uOsr[16]=\&quot;virgilio\&quot;;\t_uOkw[16]=\&quot;qs\&quot;;\n_uOsr[17]=\&quot;live\&quot;;\t_uOkw[17]=\&quot;q\&quot;;\n_uOsr[18]=\&quot;baidu\&quot;;\t_uOkw[18]=\&quot;wd\&quot;;\n_uOsr[19]=\&quot;alice\&quot;;\t_uOkw[19]=\&quot;qs\&quot;;\n_uOsr[20]=\&quot;yandex\&quot;;\t_uOkw[20]=\&quot;text\&quot;;\n_uOsr[21]=\&quot;najdi\&quot;;\t_uOkw[21]=\&quot;q\&quot;;\n_uOsr[22]=\&quot;aol\&quot;;\t_uOkw[22]=\&quot;q\&quot;;\n_uOsr[23]=\&quot;club-internet\&quot;; _uOkw[23]=\&quot;query\&quot;;\n_uOsr[24]=\&quot;mama\&quot;;\t_uOkw[24]=\&quot;query\&quot;;\n_uOsr[25]=\&quot;seznam\&quot;;\t_uOkw[25]=\&quot;q\&quot;;\n_uOsr[26]=\&quot;search\&quot;;\t_uOkw[26]=\&quot;q\&quot;;\n_uOsr[27]=\&quot;wp\&quot;;\t_uOkw[27]=\&quot;szukaj\&quot;;\n_uOsr[28]=\&quot;onet\&quot;;\t_uOkw[28]=\&quot;qt\&quot;;\n_uOsr[29]=\&quot;netsprint\&quot;;\t_uOkw[29]=\&quot;q\&quot;;\n_uOsr[30]=\&quot;google.interia\&quot;;\t_uOkw[30]=\&quot;q\&quot;;\n_uOsr[31]=\&quot;szukacz\&quot;;\t_uOkw[31]=\&quot;q\&quot;;\n_uOsr[32]=\&quot;yam\&quot;;\t_uOkw[32]=\&quot;k\&quot;;\n_uOsr[33]=\&quot;pchome\&quot;;\t_uOkw[33]=\&quot;q\&quot;;\n_uOsr[34]=\&quot;kvasir\&quot;;\t_uOkw[34]=\&quot;searchExpr\&quot;;\n_uOsr[35]=\&quot;sesam\&quot;;\t_uOkw[35]=\&quot;q\&quot;;\n_uOsr[36]=\&quot;ozu\&quot;; _uOkw[36]=\&quot;q\&quot;;\n_uOsr[37]=\&quot;terra\&quot;; _uOkw[37]=\&quot;query\&quot;;\n_uOsr[38]=\&quot;nostrum\&quot;; _uOkw[38]=\&quot;query\&quot;;\n_uOsr[39]=\&quot;mynet\&quot;; _uOkw[39]=\&quot;q\&quot;;\n_uOsr[40]=\&quot;ekolay\&quot;; _uOkw[40]=\&quot;q\&quot;;\n_uOsr[41]=\&quot;search.ilse\&quot;; _uOkw[41]=\&quot;search_for\&quot;;\n_uOsr[42]=\&quot;bing\&quot;; _uOkw[42]=\&quot;q\&quot;;\n\n//-- Auto/Organic Keywords to Ignore\nvar _uOno=new Array();\n//_uOno[0]=\&quot;urchin\&quot;;\n//_uOno[1]=\&quot;urchin.com\&quot;;\n//_uOno[2]=\&quot;www.urchin.com\&quot;;\n\n//-- Referral domains to Ignore\nvar _uRno=new Array();\n//_uRno[0]=\&quot;.urchin.com\&quot;;\n\n//-- **** Don&#39;t modify below this point ***\nvar _uff,_udh,_udt,_ubl=0,_udo=\&quot;\&quot;,_uu,_ufns=0,_uns=0,_ur=\&quot;-\&quot;,_ufno=0,_ust=0,_ubd=document,_udl=_ubd.location,_udlh=\&quot;\&quot;,_uwv=\&quot;1.4\&quot;;\nvar _ugifpath2=\&quot;http://www.google-analytics.com/__utm.gif\&quot;;\nif (_udl.hash) _udlh=_udl.href.substring(_udl.href.indexOf(&#39;#&#39;));\nif (_udl.protocol==\&quot;https:\&quot;) _ugifpath2=\&quot;https://ssl.google-analytics.com/__utm.gif\&quot;;\nif (!_utcp || _utcp==\&quot;\&quot;) _utcp=\&quot;/\&quot;;\nfunction urchinTracker(page) {\n if (_udl.protocol==\&quot;file:\&quot;) return;\n if (_uff &amp;&amp; (!page || page==\&quot;\&quot;)) return;\n var a,b,c,xx,v,z,k,x=\&quot;\&quot;,s=\&quot;\&quot;,f=0,nv=0;\n var nx=\&quot; expires=\&quot;+_uNx()+\&quot;;\&quot;;\n var dc=_ubd.cookie;\n _udh=_uDomain();\n if (!_uVG()) return;\n _uu=Math.round(Math.random()*2147483647);\n _udt=new Date();\n _ust=Math.round(_udt.getTime()/1000);\n a=dc.indexOf(\&quot;__utma=\&quot;+_udh+\&quot;.\&quot;);\n b=dc.indexOf(\&quot;__utmb=\&quot;+_udh);\n c=dc.indexOf(\&quot;__utmc=\&quot;+_udh);\n if (_udn &amp;&amp; _udn!=\&quot;\&quot;) { _udo=\&quot; domain=\&quot;+_udn+\&quot;;\&quot;; }\n if (_utimeout &amp;&amp; _utimeout!=\&quot;\&quot;) {\n  x=new Date(_udt.getTime()+(_utimeout*1000));\n  x=\&quot; expires=\&quot;+x.toGMTString()+\&quot;;\&quot;;\n }\n if (_ulink) {\n  if (_uanchor &amp;&amp; _udlh &amp;&amp; _udlh!=\&quot;\&quot;) s=_udlh+\&quot;&amp;\&quot;;\n  s+=_udl.search;\n  if(s &amp;&amp; s!=\&quot;\&quot; &amp;&amp; s.indexOf(\&quot;__utma=\&quot;)&gt;=0) {\n   if (!(_uIN(a=_uGC(s,\&quot;__utma=\&quot;,\&quot;&amp;\&quot;)))) a=\&quot;-\&quot;;\n   if (!(_uIN(b=_uGC(s,\&quot;__utmb=\&quot;,\&quot;&amp;\&quot;)))) b=\&quot;-\&quot;;\n   if (!(_uIN(c=_uGC(s,\&quot;__utmc=\&quot;,\&quot;&amp;\&quot;)))) c=\&quot;-\&quot;;\n   v=_uGC(s,\&quot;__utmv=\&quot;,\&quot;&amp;\&quot;);\n   z=_uGC(s,\&quot;__utmz=\&quot;,\&quot;&amp;\&quot;);\n   k=_uGC(s,\&quot;__utmk=\&quot;,\&quot;&amp;\&quot;);\n   xx=_uGC(s,\&quot;__utmx=\&quot;,\&quot;&amp;\&quot;);\n   if ((k*1) != ((_uHash(a+b+c+xx+z+v)*1)+(_udh*1))) {_ubl=1;a=\&quot;-\&quot;;b=\&quot;-\&quot;;c=\&quot;-\&quot;;xx=\&quot;-\&quot;;z=\&quot;-\&quot;;v=\&quot;-\&quot;;}\n   if (a!=\&quot;-\&quot; &amp;&amp; b!=\&quot;-\&quot; &amp;&amp; c!=\&quot;-\&quot;) f=1;\n   else if(a!=\&quot;-\&quot;) f=2;\n  }\n }\n if(f==1) {\n  _ubd.cookie=\&quot;__utma=\&quot;+a+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+nx+_udo;\n  _ubd.cookie=\&quot;__utmb=\&quot;+b+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+x+_udo;\n  _ubd.cookie=\&quot;__utmc=\&quot;+c+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+_udo;\n } else if (f==2) {\n  a=_uFixA(s,\&quot;&amp;\&quot;,_ust);\n  _ubd.cookie=\&quot;__utma=\&quot;+a+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+nx+_udo;\n  _ubd.cookie=\&quot;__utmb=\&quot;+_udh+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+x+_udo;\n  _ubd.cookie=\&quot;__utmc=\&quot;+_udh+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+_udo;\n  _ufns=1;\n } else if (a&gt;=0 &amp;&amp; b&gt;=0 &amp;&amp; c&gt;=0) {\n   b = _uGC(dc,\&quot;__utmb=\&quot;+_udh,\&quot;;\&quot;);\n   b = (\&quot;-\&quot; == b) ? _udh : b;  \n  _ubd.cookie=\&quot;__utmb=\&quot;+b+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+x+_udo;\n } else {\n  if (a&gt;=0) a=_uFixA(_ubd.cookie,\&quot;;\&quot;,_ust);\n  else {\n   a=_udh+\&quot;.\&quot;+_uu+\&quot;.\&quot;+_ust+\&quot;.\&quot;+_ust+\&quot;.\&quot;+_ust+\&quot;.1\&quot;;\n   nv=1;\n  }\n  _ubd.cookie=\&quot;__utma=\&quot;+a+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+nx+_udo;\n  _ubd.cookie=\&quot;__utmb=\&quot;+_udh+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+x+_udo;\n  _ubd.cookie=\&quot;__utmc=\&quot;+_udh+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+_udo;\n  _ufns=1;\n }\n if (_ulink &amp;&amp; xx &amp;&amp; xx!=\&quot;\&quot; &amp;&amp; xx!=\&quot;-\&quot;) {\n   xx=_uUES(xx);\n   if (xx.indexOf(\&quot;;\&quot;)==-1) _ubd.cookie=\&quot;__utmx=\&quot;+xx+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+nx+_udo;\n }\n if (_ulink &amp;&amp; v &amp;&amp; v!=\&quot;\&quot; &amp;&amp; v!=\&quot;-\&quot;) {\n  v=_uUES(v);\n  if (v.indexOf(\&quot;;\&quot;)==-1) _ubd.cookie=\&quot;__utmv=\&quot;+v+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+nx+_udo;\n }\n var wc=window;\n var c=_ubd.cookie;\n if(wc &amp;&amp; wc.gaGlobal &amp;&amp; wc.gaGlobal.dh==_udh){\n  var g=wc.gaGlobal;\n  var ua=c.split(\&quot;__utma=\&quot;+_udh+\&quot;.\&quot;)[1].split(\&quot;;\&quot;)[0].split(\&quot;.\&quot;);\n  if(g.sid)ua[3]=g.sid;\n  if(nv&gt;0){\n   ua[2]=ua[3];\n   if(g.vid){\n    var v=g.vid.split(\&quot;.\&quot;);\n    ua[0]=v[0];\n    ua[1]=v[1];\n   }\n  }\n  _ubd.cookie=\&quot;__utma=\&quot;+_udh+\&quot;.\&quot;+ua.join(\&quot;.\&quot;)+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+nx+_udo;\n }\n _uInfo(page);\n _ufns=0;\n _ufno=0;\n if (!page || page==\&quot;\&quot;) _uff=1;\n}\nfunction _uGH() {\n var hid;\n var wc=window;\n if (wc &amp;&amp; wc.gaGlobal &amp;&amp; wc.gaGlobal.hid) {\n  hid=wc.gaGlobal.hid;\n } else {\n  hid=Math.round(Math.random()*0x7fffffff);\n  if (!wc.gaGlobal) wc.gaGlobal={};\n  wc.gaGlobal.hid=hid;\n }\n return hid;\n}\nfunction _uInfo(page) {\n var p,s=\&quot;\&quot;,dm=\&quot;\&quot;,pg=_udl.pathname+_udl.search;\n if (page &amp;&amp; page!=\&quot;\&quot;) pg=_uES(page,1);\n _ur=_ubd.referrer;\n if (!_ur || _ur==\&quot;\&quot;) { _ur=\&quot;-\&quot;; }\n else {\n  dm=_ubd.domain;\n  if(_utcp &amp;&amp; _utcp!=\&quot;/\&quot;) dm+=_utcp;\n  p=_ur.indexOf(dm);\n  if ((p&gt;=0) &amp;&amp; (p&lt;=8)) { _ur=\&quot;0\&quot;; }\n  if (_ur.indexOf(\&quot;[\&quot;)==0 &amp;&amp; _ur.lastIndexOf(\&quot;]\&quot;)==(_ur.length-1)) { _ur=\&quot;-\&quot;; }\n }\n s+=\&quot;&amp;utmn=\&quot;+_uu;\n if (_ufsc) s+=_uBInfo();\n if (_uctm) s+=_uCInfo();\n if (_utitle &amp;&amp; _ubd.title &amp;&amp; _ubd.title!=\&quot;\&quot;) s+=\&quot;&amp;utmdt=\&quot;+_uES(_ubd.title);\n if (_udl.hostname &amp;&amp; _udl.hostname!=\&quot;\&quot;) s+=\&quot;&amp;utmhn=\&quot;+_uES(_udl.hostname);\n if (_usample &amp;&amp; _usample != 100) s+=\&quot;&amp;utmsp=\&quot;+_uES(_usample);\n s+=\&quot;&amp;utmhid=\&quot;+_uGH();\n s+=\&quot;&amp;utmr=\&quot;+_ur;\n s+=\&quot;&amp;utmp=\&quot;+pg;\n if ((_userv==0 || _userv==2) &amp;&amp; _uSP()) {\n  var i=new Image(1,1);\n  i.src=_ugifpath+\&quot;?\&quot;+\&quot;utmwv=\&quot;+_uwv+s;\n  i.onload=function() { _uVoid(); }\n }\n if ((_userv==1 || _userv==2) &amp;&amp; _uSP()) {\n  var i2=new Image(1,1);\n  i2.src=_ugifpath2+\&quot;?\&quot;+\&quot;utmwv=\&quot;+_uwv+s+\&quot;&amp;utmac=\&quot;+_uacct+\&quot;&amp;utmcc=\&quot;+_uGCS();\n  i2.onload=function() { _uVoid(); }\n }\n return;\n}\nfunction _uVoid() { return; }\nfunction _uCInfo() {\n if (!_ucto || _ucto==\&quot;\&quot;) { _ucto=\&quot;15768000\&quot;; }\n if (!_uVG()) return;\n var c=\&quot;\&quot;,t=\&quot;-\&quot;,t2=\&quot;-\&quot;,t3=\&quot;-\&quot;,o=0,cs=0,cn=0,i=0,z=\&quot;-\&quot;,s=\&quot;\&quot;;\n if (_uanchor &amp;&amp; _udlh &amp;&amp; _udlh!=\&quot;\&quot;) s=_udlh+\&quot;&amp;\&quot;;\n s+=_udl.search;\n var x=new Date(_udt.getTime()+(_ucto*1000));\n var dc=_ubd.cookie;\n x=\&quot; expires=\&quot;+x.toGMTString()+\&quot;;\&quot;;\n if (_ulink &amp;&amp; !_ubl) {\n  z=_uUES(_uGC(s,\&quot;__utmz=\&quot;,\&quot;&amp;\&quot;));\n  if (z!=\&quot;-\&quot; &amp;&amp; z.indexOf(\&quot;;\&quot;)==-1) { _ubd.cookie=\&quot;__utmz=\&quot;+z+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+x+_udo; return \&quot;\&quot;; }\n }\n z=dc.indexOf(\&quot;__utmz=\&quot;+_udh+\&quot;.\&quot;);\n if (z&gt;-1) { z=_uGC(dc,\&quot;__utmz=\&quot;+_udh+\&quot;.\&quot;,\&quot;;\&quot;); }\n else { z=\&quot;-\&quot;; }\n t=_uGC(s,_ucid+\&quot;=\&quot;,\&quot;&amp;\&quot;);\n t2=_uGC(s,_ucsr+\&quot;=\&quot;,\&quot;&amp;\&quot;);\n t3=_uGC(s,\&quot;gclid=\&quot;,\&quot;&amp;\&quot;);\n if ((t!=\&quot;-\&quot; &amp;&amp; t!=\&quot;\&quot;) || (t2!=\&quot;-\&quot; &amp;&amp; t2!=\&quot;\&quot;) || (t3!=\&quot;-\&quot; &amp;&amp; t3!=\&quot;\&quot;)) {\n  if (t!=\&quot;-\&quot; &amp;&amp; t!=\&quot;\&quot;) c+=\&quot;utmcid=\&quot;+_uEC(t);\n  if (t2!=\&quot;-\&quot; &amp;&amp; t2!=\&quot;\&quot;) { if (c != \&quot;\&quot;) c+=\&quot;|\&quot;; c+=\&quot;utmcsr=\&quot;+_uEC(t2); }\n  if (t3!=\&quot;-\&quot; &amp;&amp; t3!=\&quot;\&quot;) { if (c != \&quot;\&quot;) c+=\&quot;|\&quot;; c+=\&quot;utmgclid=\&quot;+_uEC(t3); }\n  t=_uGC(s,_uccn+\&quot;=\&quot;,\&quot;&amp;\&quot;);\n  if (t!=\&quot;-\&quot; &amp;&amp; t!=\&quot;\&quot;) c+=\&quot;|utmccn=\&quot;+_uEC(t);\n  else c+=\&quot;|utmccn=(not+set)\&quot;;\n  t=_uGC(s,_ucmd+\&quot;=\&quot;,\&quot;&amp;\&quot;);\n  if (t!=\&quot;-\&quot; &amp;&amp; t!=\&quot;\&quot;) c+=\&quot;|utmcmd=\&quot;+_uEC(t);\n  else  c+=\&quot;|utmcmd=(not+set)\&quot;;\n  t=_uGC(s,_uctr+\&quot;=\&quot;,\&quot;&amp;\&quot;);\n  if (t!=\&quot;-\&quot; &amp;&amp; t!=\&quot;\&quot;) c+=\&quot;|utmctr=\&quot;+_uEC(t);\n  else { t=_uOrg(1); if (t!=\&quot;-\&quot; &amp;&amp; t!=\&quot;\&quot;) c+=\&quot;|utmctr=\&quot;+_uEC(t); }\n  t=_uGC(s,_ucct+\&quot;=\&quot;,\&quot;&amp;\&quot;);\n  if (t!=\&quot;-\&quot; &amp;&amp; t!=\&quot;\&quot;) c+=\&quot;|utmcct=\&quot;+_uEC(t);\n  t=_uGC(s,_ucno+\&quot;=\&quot;,\&quot;&amp;\&quot;);\n  if (t==\&quot;1\&quot;) o=1;\n  if (z!=\&quot;-\&quot; &amp;&amp; o==1) return \&quot;\&quot;;\n }\n if (c==\&quot;-\&quot; || c==\&quot;\&quot;) { c=_uOrg(); if (z!=\&quot;-\&quot; &amp;&amp; _ufno==1)  return \&quot;\&quot;; }\n if (c==\&quot;-\&quot; || c==\&quot;\&quot;) { if (_ufns==1)  c=_uRef(); if (z!=\&quot;-\&quot; &amp;&amp; _ufno==1)  return \&quot;\&quot;; }\n if (c==\&quot;-\&quot; || c==\&quot;\&quot;) {\n  if (z==\&quot;-\&quot; &amp;&amp; _ufns==1) { c=\&quot;utmccn=(direct)|utmcsr=(direct)|utmcmd=(none)\&quot;; }\n  if (c==\&quot;-\&quot; || c==\&quot;\&quot;) return \&quot;\&quot;;\n }\n if (z!=\&quot;-\&quot;) {\n  i=z.indexOf(\&quot;.\&quot;);\n  if (i&gt;-1) i=z.indexOf(\&quot;.\&quot;,i+1);\n  if (i&gt;-1) i=z.indexOf(\&quot;.\&quot;,i+1);\n  if (i&gt;-1) i=z.indexOf(\&quot;.\&quot;,i+1);\n  t=z.substring(i+1,z.length);\n  if (t.toLowerCase()==c.toLowerCase()) cs=1;\n  t=z.substring(0,i);\n  if ((i=t.lastIndexOf(\&quot;.\&quot;)) &gt; -1) {\n   t=t.substring(i+1,t.length);\n   cn=(t*1);\n  }\n }\n if (cs==0 || _ufns==1) {\n  t=_uGC(dc,\&quot;__utma=\&quot;+_udh+\&quot;.\&quot;,\&quot;;\&quot;);\n  if ((i=t.lastIndexOf(\&quot;.\&quot;)) &gt; 9) {\n   _uns=t.substring(i+1,t.length);\n   _uns=(_uns*1);\n  }\n  cn++;\n  if (_uns==0) _uns=1;\n  _ubd.cookie=\&quot;__utmz=\&quot;+_udh+\&quot;.\&quot;+_ust+\&quot;.\&quot;+_uns+\&quot;.\&quot;+cn+\&quot;.\&quot;+c+\&quot;; path=\&quot;+_utcp+\&quot;; \&quot;+x+_udo;\n }\n if (cs==0 || _ufns==1) return \&quot;&amp;utmcn=1\&quot;;\n else return \&quot;&amp;utmcr=1\&quot;;\n}\nfunction _uRef() {\n if (_ur==\&quot;0\&quot; || _ur==\&quot;\&quot; || _ur==\&quot;-\&quot;) return \&quot;\&quot;;\n var i=0,h,k,n;\n if ((i=_ur.indexOf(\&quot;://\&quot;))&lt;0 || _uGCse()) return \&quot;\&quot;;\n h=_ur.substring(i+3,_ur.length);\n if (h.indexOf(\&quot;/\&quot;) &gt; -1) {\n  k=h.substring(h.indexOf(\&quot;/\&quot;),h.length);\n  if (k.indexOf(\&quot;?\&quot;) &gt; -1) k=k.substring(0,k.indexOf(\&quot;?\&quot;));\n  h=h.substring(0,h.indexOf(\&quot;/\&quot;));\n }\n h=h.toLowerCase();\n n=h;\n if ((i=n.indexOf(\&quot;:\&quot;)) &gt; -1) n=n.substring(0,i);\n for (var ii=0;ii&lt;_uRno.length;ii++) {\n  if ((i=n.indexOf(_uRno[ii].toLowerCase())) &gt; -1 &amp;&amp; n.length==(i+_uRno[ii].length)) { _ufno=1; break; }\n }\n if (h.indexOf(\&quot;www.\&quot;)==0) h=h.substring(4,h.length);\n return \&quot;utmccn=(referral)|utmcsr=\&quot;+_uEC(h)+\&quot;|\&quot;+\&quot;utmcct=\&quot;+_uEC(k)+\&quot;|utmcmd=referral\&quot;;\n}\nfunction _uOrg(t) {\n if (_ur==\&quot;0\&quot; || _ur==\&quot;\&quot; || _ur==\&quot;-\&quot;) return \&quot;\&quot;;\n var i=0,h,k;\n if ((i=_ur.indexOf(\&quot;://\&quot;))&lt;0 || _uGCse()) return \&quot;\&quot;;\n h=_ur.substring(i+3,_ur.length);\n if (h.indexOf(\&quot;/\&quot;) &gt; -1) {\n  h=h.substring(0,h.indexOf(\&quot;/\&quot;));\n }\n for (var ii=0;ii&lt;_uOsr.length;ii++) {\n  if (h.toLowerCase().indexOf(_uOsr[ii].toLowerCase()) &gt; -1) {\n   if ((i=_ur.indexOf(\&quot;?\&quot;+_uOkw[ii]+\&quot;=\&quot;)) &gt; -1 || (i=_ur.indexOf(\&quot;&amp;\&quot;+_uOkw[ii]+\&quot;=\&quot;)) &gt; -1) {\n    k=_ur.substring(i+_uOkw[ii].length+2,_ur.length);\n    if ((i=k.indexOf(\&quot;&amp;\&quot;)) &gt; -1) k=k.substring(0,i);\n    for (var yy=0;yy&lt;_uOno.length;yy++) {\n     if (_uOno[yy].toLowerCase()==k.toLowerCase()) { _ufno=1; break; }\n    }\n    if (t) return _uEC(k);\n    else return \&quot;utmccn=(organic)|utmcsr=\&quot;+_uEC(_uOsr[ii])+\&quot;|\&quot;+\&quot;utmctr=\&quot;+_uEC(k)+\&quot;|utmcmd=organic\&quot;;\n   }\n  }\n }\n return \&quot;\&quot;;\n}\nfunction _uGCse() {\n var h,p;\n h=p=_ur.split(\&quot;://\&quot;)[1];\n if(h.indexOf(\&quot;/\&quot;)&gt;-1) {\n  h=h.split(\&quot;/\&quot;)[0];\n  p=p.substring(p.indexOf(\&quot;/\&quot;)+1,p.length);\n }\n if(p.indexOf(\&quot;?\&quot;)&gt;-1) {\n  p=p.split(\&quot;?\&quot;)[0];\n }\n if(h.toLowerCase().indexOf(\&quot;google\&quot;)&gt;-1) {\n  if(_ur.indexOf(\&quot;?q=\&quot;)&gt;-1 || _ur.indexOf(\&quot;&amp;q=\&quot;)&gt;-1) {\n   if (p.toLowerCase().indexOf(\&quot;cse\&quot;)&gt;-1) {\n    return true;\n   }\n  }\n }\n}\nfunction _uBInfo() {\n var sr=\&quot;-\&quot;,sc=\&quot;-\&quot;,ul=\&quot;-\&quot;,fl=\&quot;-\&quot;,cs=\&quot;-\&quot;,je=1;\n var n=navigator;\n if (self.screen) {\n  sr=screen.width+\&quot;x\&quot;+screen.height;\n  sc=screen.colorDepth+\&quot;-bit\&quot;;\n } else if (self.java) {\n  var j=java.awt.Toolkit.getDefaultToolkit();\n  var s=j.getScreenSize();\n  sr=s.width+\&quot;x\&quot;+s.height;\n }\n if (n.language) { ul=n.language.toLowerCase(); }\n else if (n.browserLanguage) { ul=n.browserLanguage.toLowerCase(); }\n je=n.javaEnabled()?1:0;\n if (_uflash) fl=_uFlash();\n if (_ubd.characterSet) cs=_uES(_ubd.characterSet);\n else if (_ubd.charset) cs=_uES(_ubd.charset);\n return \&quot;&amp;utmcs=\&quot;+cs+\&quot;&amp;utmsr=\&quot;+sr+\&quot;&amp;utmsc=\&quot;+sc+\&quot;&amp;utmul=\&quot;+ul+\&quot;&amp;utmje=\&quot;+je+\&quot;&amp;utmfl=\&quot;+fl;\n}\nfunction __utmSetTrans() {\n var e;\n if (_ubd.getElementById) e=_ubd.getElementById(\&quot;utmtrans\&quot;);\n else if (_ubd.utmform &amp;&amp; _ubd.utmform.utmtrans) e=_ubd.utmform.utmtrans;\n if (!e) return;\n var l=e.value.split(\&quot;UTM:\&quot;);\n var i,i2,c;\n if (_userv==0 || _userv==2) i=new Array();\n if (_userv==1 || _userv==2) { i2=new Array(); c=_uGCS(); }\n\n for (var ii=0;ii&lt;l.length;ii++) {\n  l[ii]=_uTrim(l[ii]);\n  if (l[ii].charAt(0)!=&#39;T&#39; &amp;&amp; l[ii].charAt(0)!=&#39;I&#39;) continue;\n  var r=Math.round(Math.random()*2147483647);\n  if (!_utsp || _utsp==\&quot;\&quot;) _utsp=\&quot;|\&quot;;\n  var f=l[ii].split(_utsp),s=\&quot;\&quot;;\n  if (f[0].charAt(0)==&#39;T&#39;) {\n   s=\&quot;&amp;utmt=tran\&quot;+\&quot;&amp;utmn=\&quot;+r;\n   f[1]=_uTrim(f[1]); if(f[1]&amp;&amp;f[1]!=\&quot;\&quot;) s+=\&quot;&amp;utmtid=\&quot;+_uES(f[1]);\n   f[2]=_uTrim(f[2]); if(f[2]&amp;&amp;f[2]!=\&quot;\&quot;) s+=\&quot;&amp;utmtst=\&quot;+_uES(f[2]);\n   f[3]=_uTrim(f[3]); if(f[3]&amp;&amp;f[3]!=\&quot;\&quot;) s+=\&quot;&amp;utmtto=\&quot;+_uES(f[3]);\n   f[4]=_uTrim(f[4]); if(f[4]&amp;&amp;f[4]!=\&quot;\&quot;) s+=\&quot;&amp;utmttx=\&quot;+_uES(f[4]);\n   f[5]=_uTrim(f[5]); if(f[5]&amp;&amp;f[5]!=\&quot;\&quot;) s+=\&quot;&amp;utmtsp=\&quot;+_uES(f[5]);\n   f[6]=_uTrim(f[6]); if(f[6]&amp;&amp;f[6]!=\&quot;\&quot;) s+=\&quot;&amp;utmtci=\&quot;+_uES(f[6]);\n   f[7]=_uTrim(f[7]); if(f[7]&amp;&amp;f[7]!=\&quot;\&quot;) s+=\&quot;&amp;utmtrg=\&quot;+_uES(f[7]);\n   f[8]=_uTrim(f[8]); if(f[8]&amp;&amp;f[8]!=\&quot;\&quot;) s+=\&quot;&amp;utmtco=\&quot;+_uES(f[8]);\n  } else {\n   s=\&quot;&amp;utmt=item\&quot;+\&quot;&amp;utmn=\&quot;+r;\n   f[1]=_uTrim(f[1]); if(f[1]&amp;&amp;f[1]!=\&quot;\&quot;) s+=\&quot;&amp;utmtid=\&quot;+_uES(f[1]);\n   f[2]=_uTrim(f[2]); if(f[2]&amp;&amp;f[2]!=\&quot;\&quot;) s+=\&quot;&amp;utmipc=\&quot;+_uES(f[2]);\n   f[3]=_uTrim(f[3]); if(f[3]&amp;&amp;f[3]!=\&quot;\&quot;) s+=\&quot;&amp;utmipn=\&quot;+_uES(f[3]);\n   f[4]=_uTrim(f[4]); if(f[4]&amp;&amp;f[4]!=\&quot;\&quot;) s+=\&quot;&amp;utmiva=\&quot;+_uES(f[4]);\n   f[5]=_uTrim(f[5]); if(f[5]&amp;&amp;f[5]!=\&quot;\&quot;) s+=\&quot;&amp;utmipr=\&quot;+_uES(f[5]);\n   f[6]=_uTrim(f[6]); if(f[6]&amp;&amp;f[6]!=\&quot;\&quot;) s+=\&quot;&amp;utmiqt=\&quot;+_uES(f[6]);\n  }\n  if (_udl.hostname &amp;&amp; _udl.hostname!=\&quot;\&quot;) s+=\&quot;&amp;utmhn=\&quot;+_uES(_udl.hostname);\n  if (_usample &amp;&amp; _usample != 100) s+=\&quot;&amp;utmsp=\&quot;+_uES(_usample);\n\n  if ((_userv==0 || _userv==2) &amp;&amp; _uSP()) {\n   i[ii]=new Image(1,1);\n   i[ii].src=_ugifpath+\&quot;?\&quot;+\&quot;utmwv=\&quot;+_uwv+s;\n   i[ii].onload=function() { _uVoid(); }\n  }\n  if ((_userv==1 || _userv==2) &amp;&amp; _uSP()) {\n   i2[ii]=new Image(1,1);\n   i2[ii].src=_ugifpath2+\&quot;?\&quot;+\&quot;utmwv=\&quot;+_uwv+s+\&quot;&amp;utmac=\&quot;+_uacct+\&quot;&amp;utmcc=\&quot;+c;\n   i2[ii].onload=function() { _uVoid(); }\n  }\n }\n return;\n}\nfunction _uFlash() {\n var f=\&quot;-\&quot;,n=navigator;\n if (n.plugins &amp;&amp; n.plugins.length) {\n  for (var ii=0;ii&lt;n.plugins.length;ii++) {\n   if (n.plugins[ii].name.indexOf(&#39;Shockwave Flash&#39;)!=-1) {\n    f=n.plugins[ii].description.split(&#39;Shockwave Flash &#39;)[1];\n    break;\n   }\n  }\n } else {\n  var fl;\n  try {\n   fl = new ActiveXObject(\&quot;ShockwaveFlash.ShockwaveFlash.7\&quot;);\n   f = fl.GetVariable(\&quot;$version\&quot;);\n  } catch(e) {}\n  if (f == \&quot;-\&quot;) {\n   try {\n    fl = new ActiveXObject(\&quot;ShockwaveFlash.ShockwaveFlash.6\&quot;);\n    f = \&quot;WIN 6,0,21,0\&quot;;\n    fl.AllowScriptAccess = \&quot;always\&quot;;\n    f = fl.GetVariable(\&quot;$version\&quot;);\n   } catch(e) {}\n  }\n  if (f == \&quot;-\&quot;) {\n   try {\n    fl = new ActiveXObject(\&quot;ShockwaveFlash.ShockwaveFlash\&quot;);\n    f = fl.GetVariable(\&quot;$version\&quot;);\n   } catch(e) {}\n  }\n  if (f != \&quot;-\&quot;) {\n   f = f.split(\&quot; \&quot;)[1].split(\&quot;,\&quot;);\n   f = f[0] + \&quot;.\&quot; + f[1] + \&quot; r\&quot; + f[2];\n  }\n }\n return f;\n}\nfunction __utmLinkerUrl(l,h) {\n var p,k,a=\&quot;-\&quot;,b=\&quot;-\&quot;,c=\&quot;-\&quot;,x=\&quot;-\&quot;,z=\&quot;-\&quot;,v=\&quot;-\&quot;;\n var dc=_ubd.cookie;\n var iq = l.indexOf(\&quot;?\&quot;);\n var ih = l.indexOf(\&quot;#\&quot;);\n var url=l;\n if (dc) {\n  a=_uES(_uGC(dc,\&quot;__utma=\&quot;+_udh+\&quot;.\&quot;,\&quot;;\&quot;));\n  b=_uES(_uGC(dc,\&quot;__utmb=\&quot;+_udh,\&quot;;\&quot;));\n  c=_uES(_uGC(dc,\&quot;__utmc=\&quot;+_udh,\&quot;;\&quot;));\n  x=_uES(_uGC(dc,\&quot;__utmx=\&quot;+_udh,\&quot;;\&quot;));\n  z=_uES(_uGC(dc,\&quot;__utmz=\&quot;+_udh+\&quot;.\&quot;,\&quot;;\&quot;));\n  v=_uES(_uGC(dc,\&quot;__utmv=\&quot;+_udh+\&quot;.\&quot;,\&quot;;\&quot;));\n  k=(_uHash(a+b+c+x+z+v)*1)+(_udh*1);\n  p=\&quot;__utma=\&quot;+a+\&quot;&amp;__utmb=\&quot;+b+\&quot;&amp;__utmc=\&quot;+c+\&quot;&amp;__utmx=\&quot;+x+\&quot;&amp;__utmz=\&quot;+z+\&quot;&amp;__utmv=\&quot;+v+\&quot;&amp;__utmk=\&quot;+k;\n }\n if (p) {\n  if (h &amp;&amp; ih&gt;-1) return;\n  if (h) { url=l+\&quot;#\&quot;+p; }\n  else {\n   if (iq==-1 &amp;&amp; ih==-1) url=l+\&quot;?\&quot;+p;\n   else if (ih==-1) url=l+\&quot;&amp;\&quot;+p;\n   else if (iq==-1) url=l.substring(0,ih-1)+\&quot;?\&quot;+p+l.substring(ih);\n   else url=l.substring(0,ih-1)+\&quot;&amp;\&quot;+p+l.substring(ih);\n  }\n }\n return url;\n}\nfunction __utmLinker(l,h) {\n if (!_ulink || !l || l==\&quot;\&quot;) return;\n _udl.href=__utmLinkerUrl(l,h);\n}\nfunction __utmLinkPost(f,h) {\n if (!_ulink || !f || !f.action) return;\n f.action=__utmLinkerUrl(f.action, h);\n return;\n}\nfunction __utmSetVar(v) {\n if (!v || v==\&quot;\&quot;) return;\n if (!_udo || _udo == \&quot;\&quot;) {\n  _udh=_uDomain();\n  if (_udn &amp;&amp; _udn!=\&quot;\&quot;) { _udo=\&quot; domain=\&quot;+_udn+\&quot;;\&quot;; }\n }\n if (!_uVG()) return;\n var r=Math.round(Math.random() * 2147483647);\n _ubd.cookie=\&quot;__utmv=\&quot;+_udh+\&quot;.\&quot;+_uES(v)+\&quot;; path=\&quot;+_utcp+\&quot;; expires=\&quot;+_uNx()+\&quot;;\&quot;+_udo;\n var s=\&quot;&amp;utmt=var&amp;utmn=\&quot;+r;\n if (_usample &amp;&amp; _usample != 100) s+=\&quot;&amp;utmsp=\&quot;+_uES(_usample);\n if ((_userv==0 || _userv==2) &amp;&amp; _uSP()) {\n  var i=new Image(1,1);\n  i.src=_ugifpath+\&quot;?\&quot;+\&quot;utmwv=\&quot;+_uwv+s;\n  i.onload=function() { _uVoid(); }\n }\n if ((_userv==1 || _userv==2) &amp;&amp; _uSP()) {\n  var i2=new Image(1,1);\n  i2.src=_ugifpath2+\&quot;?\&quot;+\&quot;utmwv=\&quot;+_uwv+s+\&quot;&amp;utmac=\&quot;+_uacct+\&quot;&amp;utmcc=\&quot;+_uGCS();\n  i2.onload=function() { _uVoid(); }\n }\n}\nfunction _uGCS() {\n var t,c=\&quot;\&quot;,dc=_ubd.cookie;\n if ((t=_uGC(dc,\&quot;__utma=\&quot;+_udh+\&quot;.\&quot;,\&quot;;\&quot;))!=\&quot;-\&quot;) c+=_uES(\&quot;__utma=\&quot;+t+\&quot;;+\&quot;);\n if ((t=_uGC(dc,\&quot;__utmx=\&quot;+_udh,\&quot;;\&quot;))!=\&quot;-\&quot;) c+=_uES(\&quot;__utmx=\&quot;+t+\&quot;;+\&quot;);\n if ((t=_uGC(dc,\&quot;__utmz=\&quot;+_udh+\&quot;.\&quot;,\&quot;;\&quot;))!=\&quot;-\&quot;) c+=_uES(\&quot;__utmz=\&quot;+t+\&quot;;+\&quot;);\n if ((t=_uGC(dc,\&quot;__utmv=\&quot;+_udh+\&quot;.\&quot;,\&quot;;\&quot;))!=\&quot;-\&quot;) c+=_uES(\&quot;__utmv=\&quot;+t+\&quot;;\&quot;);\n if (c.charAt(c.length-1)==\&quot;+\&quot;) c=c.substring(0,c.length-1);\n return c;\n}\nfunction _uGC(l,n,s) {\n if (!l || l==\&quot;\&quot; || !n || n==\&quot;\&quot; || !s || s==\&quot;\&quot;) return \&quot;-\&quot;;\n var i,i2,i3,c=\&quot;-\&quot;;\n i=l.indexOf(n);\n i3=n.indexOf(\&quot;=\&quot;)+1;\n if (i &gt; -1) {\n  i2=l.indexOf(s,i); if (i2 &lt; 0) { i2=l.length; }\n  c=l.substring((i+i3),i2);\n }\n return c;\n}\nfunction _uDomain() {\n if (!_udn || _udn==\&quot;\&quot; || _udn==\&quot;none\&quot;) { _udn=\&quot;\&quot;; return 1; }\n if (_udn==\&quot;auto\&quot;) {\n  var d=_ubd.domain;\n  if (d.substring(0,4)==\&quot;www.\&quot;) {\n   d=d.substring(4,d.length);\n  }\n  _udn=d;\n }\n _udn = _udn.toLowerCase(); \n if (_uhash==\&quot;off\&quot;) return 1;\n return _uHash(_udn);\n}\nfunction _uHash(d) {\n if (!d || d==\&quot;\&quot;) return 1;\n var h=0,g=0;\n for (var i=d.length-1;i&gt;=0;i--) {\n  var c=parseInt(d.charCodeAt(i));\n  h=((h &lt;&lt; 6) &amp; 0xfffffff) + c + (c &lt;&lt; 14);\n  if ((g=h &amp; 0xfe00000)!=0) h=(h ^ (g &gt;&gt; 21));\n }\n return h;\n}\nfunction _uFixA(c,s,t) {\n if (!c || c==\&quot;\&quot; || !s || s==\&quot;\&quot; || !t || t==\&quot;\&quot;) return \&quot;-\&quot;;\n var a=_uGC(c,\&quot;__utma=\&quot;+_udh+\&quot;.\&quot;,s);\n var lt=0,i=0;\n if ((i=a.lastIndexOf(\&quot;.\&quot;)) &gt; 9) {\n  _uns=a.substring(i+1,a.length);\n  _uns=(_uns*1)+1;\n  a=a.substring(0,i);\n  if ((i=a.lastIndexOf(\&quot;.\&quot;)) &gt; 7) {\n   lt=a.substring(i+1,a.length);\n   a=a.substring(0,i);\n  }\n  if ((i=a.lastIndexOf(\&quot;.\&quot;)) &gt; 5) {\n   a=a.substring(0,i);\n  }\n  a+=\&quot;.\&quot;+lt+\&quot;.\&quot;+t+\&quot;.\&quot;+_uns;\n }\n return a;\n}\nfunction _uTrim(s) {\n  if (!s || s==\&quot;\&quot;) return \&quot;\&quot;;\n  while ((s.charAt(0)==&#39; &#39;) || (s.charAt(0)==&#39;\\n&#39;) || (s.charAt(0,1)==&#39;\\r&#39;)) s=s.substring(1,s.length);\n  while ((s.charAt(s.length-1)==&#39; &#39;) || (s.charAt(s.length-1)==&#39;\\n&#39;) || (s.charAt(s.length-1)==&#39;\\r&#39;)) s=s.substring(0,s.length-1);\n  return s;\n}\nfunction _uEC(s) {\n  var n=\&quot;\&quot;;\n  if (!s || s==\&quot;\&quot;) return \&quot;\&quot;;\n  for (var i=0;i&lt;s.length;i++) {if (s.charAt(i)==\&quot; \&quot;) n+=\&quot;+\&quot;; else n+=s.charAt(i);}\n  return n;\n}\nfunction __utmVisitorCode(f) {\n var r=0,t=0,i=0,i2=0,m=31;\n var a=_uGC(_ubd.cookie,\&quot;__utma=\&quot;+_udh+\&quot;.\&quot;,\&quot;;\&quot;);\n if ((i=a.indexOf(\&quot;.\&quot;,0))&lt;0) return;\n if ((i2=a.indexOf(\&quot;.\&quot;,i+1))&gt;0) r=a.substring(i+1,i2); else return \&quot;\&quot;;  \n if ((i=a.indexOf(\&quot;.\&quot;,i2+1))&gt;0) t=a.substring(i2+1,i); else return \&quot;\&quot;;  \n if (f) {\n  return r;\n } else {\n  var c=new Array(&#39;A&#39;,&#39;B&#39;,&#39;C&#39;,&#39;D&#39;,&#39;E&#39;,&#39;F&#39;,&#39;G&#39;,&#39;H&#39;,&#39;J&#39;,&#39;K&#39;,&#39;L&#39;,&#39;M&#39;,&#39;N&#39;,&#39;P&#39;,&#39;R&#39;,&#39;S&#39;,&#39;T&#39;,&#39;U&#39;,&#39;V&#39;,&#39;W&#39;,&#39;X&#39;,&#39;Y&#39;,&#39;Z&#39;,&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;,&#39;6&#39;,&#39;7&#39;,&#39;8&#39;,&#39;9&#39;);\n  return c[r&gt;&gt;28&amp;m]+c[r&gt;&gt;23&amp;m]+c[r&gt;&gt;18&amp;m]+c[r&gt;&gt;13&amp;m]+\&quot;-\&quot;+c[r&gt;&gt;8&amp;m]+c[r&gt;&gt;3&amp;m]+c[((r&amp;7)&lt;&lt;2)+(t&gt;&gt;30&amp;3)]+c[t&gt;&gt;25&amp;m]+c[t&gt;&gt;20&amp;m]+\&quot;-\&quot;+c[t&gt;&gt;15&amp;m]+c[t&gt;&gt;10&amp;m]+c[t&gt;&gt;5&amp;m]+c[t&amp;m];\n }\n}\nfunction _uIN(n) {\n if (!n) return false;\n for (var i=0;i&lt;n.length;i++) {\n  var c=n.charAt(i);\n  if ((c&lt;\&quot;0\&quot; || c&gt;\&quot;9\&quot;) &amp;&amp; (c!=\&quot;.\&quot;)) return false;\n }\n return true;\n}\nfunction _uES(s,u) {\n if (typeof(encodeURIComponent) == &#39;function&#39;) {\n  if (u) return encodeURI(s);\n  else return encodeURIComponent(s);\n } else {\n  return escape(s);\n }\n}\nfunction _uUES(s) {\n if (typeof(decodeURIComponent) == &#39;function&#39;) {\n  return decodeURIComponent(s);\n } else {\n  return unescape(s);\n }\n}\nfunction _uVG() {\n if((_udn.indexOf(\&quot;www.google.\&quot;) == 0 || _udn.indexOf(\&quot;.google.\&quot;) == 0 || _udn.indexOf(\&quot;google.\&quot;) == 0) &amp;&amp; _utcp==&#39;/&#39; &amp;&amp; _udn.indexOf(\&quot;google.org\&quot;)==-1) {\n  return false;\n }\n return true;\n}\nfunction _uSP() {\n var s=100;\n if (_usample) s=_usample;\n if(s&gt;=100 || s&lt;=0) return true;\n return ((__utmVisitorCode(1)%10000)&lt;(s*100));\n}\nfunction urchinPathCopy(p){\n var d=document,nx,tx,sx,i,c,cs,t,h,o;\n cs=new Array(\&quot;a\&quot;,\&quot;b\&quot;,\&quot;c\&quot;,\&quot;v\&quot;,\&quot;x\&quot;,\&quot;z\&quot;);\n h=_uDomain(); if (_udn &amp;&amp; _udn!=\&quot;\&quot;) o=\&quot; domain=\&quot;+_udn+\&quot;;\&quot;;\n nx=_uNx()+\&quot;;\&quot;;\n tx=new Date(); tx.setTime(tx.getTime()+(_utimeout*1000));\n tx=tx.toGMTString()+\&quot;;\&quot;;\n sx=new Date(); sx.setTime(sx.getTime()+(_ucto*1000));\n sx=sx.toGMTString()+\&quot;;\&quot;;\n for (i=0;i&lt;6;i++){\n  t=\&quot; expires=\&quot;;\n  if (i==1) t+=tx; else if (i==2) t=\&quot;\&quot;; else if (i==5) t+=sx; else t+=nx;\n  c=_uGC(d.cookie,\&quot;__utm\&quot;+cs[i]+\&quot;=\&quot;+h,\&quot;;\&quot;);\n  if (c!=\&quot;-\&quot;) d.cookie=\&quot;__utm\&quot;+cs[i]+\&quot;=\&quot;+c+\&quot;; path=\&quot;+p+\&quot;;\&quot;+t+o;\n }\n}\nfunction _uCO() {\n if (!_utk || _utk==\&quot;\&quot; || _utk.length&lt;10) return;\n var d=&#39;www.google.com&#39;;\n if (_utk.charAt(0)==&#39;!&#39;) d=&#39;analytics.corp.google.com&#39;;\n _ubd.cookie=\&quot;GASO=\&quot;+_utk+\&quot;; path=\&quot;+_utcp+\&quot;;\&quot;+_udo;\n var sc=document.createElement(&#39;script&#39;);\n sc.type=&#39;text/javascript&#39;;\n sc.id=\&quot;_gasojs\&quot;;\n sc.src=&#39;https://&#39;+d+&#39;/analytics/reporting/overlay_js?gaso=&#39;+_utk+&#39;&amp;&#39;+Math.random();\n document.getElementsByTagName(&#39;head&#39;)[0].appendChild(sc);  \n}\nfunction _uGT() {\n var h=location.hash, a;\n if (h &amp;&amp; h!=\&quot;\&quot; &amp;&amp; h.indexOf(\&quot;#gaso=\&quot;)==0) {\n  a=_uGC(h,\&quot;gaso=\&quot;,\&quot;&amp;\&quot;);\n } else {\n  a=_uGC(_ubd.cookie,\&quot;GASO=\&quot;,\&quot;;\&quot;);\n }\n return a;\n}\nvar _utk=_uGT();\nif (_utk &amp;&amp; _utk!=\&quot;\&quot; &amp;&amp; _utk.length&gt;10 &amp;&amp; _utk.indexOf(\&quot;=\&quot;)==-1) {\n if (window.addEventListener) {\n  window.addEventListener(&#39;load&#39;, _uCO, false); \n } else if (window.attachEvent) { \n  window.attachEvent(&#39;onload&#39;, _uCO);\n }\n}\n\nfunction _uNx() {\n  return (new Date((new Date()).getTime()+63072000000)).toGMTString();\n}\n&quot;
           },
           &quot;redirectURL&quot;: &quot;&quot;,
           &quot;headersSize&quot;: -1,
@@ -241,32 +443,32 @@ Content-Length: 3337</pre>
         &quot;cache&quot;: {
         },
         &quot;timings&quot;: {
-          &quot;blocked&quot;: -1,
+          &quot;blocked&quot;: 0.13513898022938567,
           &quot;dns&quot;: -1,
           &quot;ssl&quot;: -1,
           &quot;connect&quot;: -1,
           &quot;send&quot;: 0,
-          &quot;wait&quot;: 0.02800003858283162,
-          &quot;receive&quot;: 0.0029999646358191967,
-          &quot;_blocked_queueing&quot;: -1
+          &quot;wait&quot;: 0.8239999879151578,
+          &quot;receive&quot;: 6.715000024996698,
+          &quot;_blocked_queueing&quot;: 0.139000010676682
         },
-        &quot;serverIPAddress&quot;: &quot;[2a00:1ed0:2:0:1:5bef:c83b:1]&quot;,
-        &quot;_fromCache&quot;: &quot;memory&quot;,
+        &quot;serverIPAddress&quot;: &quot;[2607:f8b0:4002:812::200e]&quot;,
+        &quot;_fromCache&quot;: &quot;disk&quot;,
         &quot;pageref&quot;: &quot;page_1&quot;
       },
       &quot;response_content_mime_type&quot;: &quot;application/javascript&quot;,
-      &quot;response_content_size&quot;: &quot;4830.0113490708&quot;,
-      &quot;response_status&quot;: 201,
-      &quot;started_date_time&quot;: &quot;2018-01-08T04:29:23.971Z&quot;,
-      &quot;time&quot;: &quot;2654.26320315185&quot;,
-      &quot;timings_blocked&quot;: &quot;128.323382692085&quot;,
-      &quot;timings_connect&quot;: &quot;4642.96141138163&quot;,
-      &quot;timings_dns&quot;: &quot;919.76431301409&quot;,
-      &quot;timings_receive&quot;: &quot;1725.94756269897&quot;,
-      &quot;timings_send&quot;: &quot;688.622005674396&quot;,
-      &quot;timings_ssl&quot;: &quot;2754.65316997584&quot;,
-      &quot;timings_wait&quot;: &quot;3987.03208368049&quot;,
-      &quot;url&quot;: &quot;http://huelsweinat.name/nina.price&quot;
+      &quot;response_content_size&quot;: &quot;3310.2152348081&quot;,
+      &quot;response_status&quot;: 301,
+      &quot;started_date_time&quot;: &quot;2018-01-08T04:53:12.756Z&quot;,
+      &quot;time&quot;: &quot;3321.01167704262&quot;,
+      &quot;timings_blocked&quot;: &quot;1214.62679804857&quot;,
+      &quot;timings_connect&quot;: &quot;1796.3945425132&quot;,
+      &quot;timings_dns&quot;: &quot;41.2244415104341&quot;,
+      &quot;timings_receive&quot;: &quot;2296.13895666041&quot;,
+      &quot;timings_send&quot;: &quot;1701.42572269036&quot;,
+      &quot;timings_ssl&quot;: &quot;1270.09680614377&quot;,
+      &quot;timings_wait&quot;: &quot;1231.02309108101&quot;,
+      &quot;url&quot;: &quot;http://wardklocko.net/magdalena.waelchi&quot;
     }
   ]
 }</pre>

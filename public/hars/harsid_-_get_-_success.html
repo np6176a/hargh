@@ -116,6 +116,81 @@ table th, table td {
           </p>
 
 
+          <h3>Response Fields</h3>
+          <table class="response-fields table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">har[created_at]</span>
+                </td>
+                <td>
+                  <span class="description">Created At</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">har[entries_count]</span>
+                </td>
+                <td>
+                  <span class="description">Number of Entries on this HAR</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">har[id]</span>
+                </td>
+                <td>
+                  <span class="description">ID</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">har[page_timings_on_content_loaded]</span>
+                </td>
+                <td>
+                  <span class="description">HAR Page Timings On Content Load</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">har[page_timings_on_load]</span>
+                </td>
+                <td>
+                  <span class="description">HAR Page Timings On Load</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">har[raw]</span>
+                </td>
+                <td>
+                  <span class="description">Original Data Sent</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">har[started_date_time]</span>
+                </td>
+                <td>
+                  <span class="description">HAR Started Date Time</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">har[title]</span>
+                </td>
+                <td>
+                  <span class="description">HAR Title</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
           <h3>Request</h3>
 
@@ -126,12 +201,12 @@ Host: example.org
 Cookie: </pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /hars/33</pre>
+          <pre class="request route highlight">GET /hars/70</pre>
 
 
 
             <h4>cURL</h4>
-            <pre class="request curl">curl -g &quot;http://localhost:3000/hars/33&quot; -X GET \
+            <pre class="request curl">curl -g &quot;http://localhost:3000/hars/70&quot; -X GET \
 	-H &quot;Accept: application/json&quot; \
 	-H &quot;Content-Type: application/json&quot; \
 	-H &quot;Host: example.org&quot; \
@@ -140,22 +215,22 @@ Cookie: </pre>
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8
-ETag: W/&quot;a57f1100c12a108744b67f8b9def1725&quot;
+ETag: W/&quot;ffa52b9508c4ede088d0667933fd863b&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: 40156985-7e30-42d0-b275-f414bd3a2a2a
-X-Runtime: 0.034149
-Content-Length: 316302</pre>
+X-Request-Id: 40e59238-3ca9-41a5-a2ae-9c73bde1e230
+X-Runtime: 0.031336
+Content-Length: 316313</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">{
   &quot;har&quot;: {
-    &quot;id&quot;: 33,
-    &quot;created_at&quot;: &quot;2018-01-08T04:29:24.794Z&quot;,
-    &quot;started_date_time&quot;: &quot;2018-01-08T04:29:24.793Z&quot;,
-    &quot;title&quot;: &quot;Greenfelder, Torp and Schowalter&quot;,
-    &quot;page_timings_on_content_loaded&quot;: &quot;3524.36687921728&quot;,
-    &quot;page_timings_on_load&quot;: &quot;4207.42480179697&quot;,
+    &quot;id&quot;: 70,
+    &quot;created_at&quot;: &quot;2018-01-08T04:53:12.406Z&quot;,
+    &quot;started_date_time&quot;: &quot;2018-01-08T04:53:12.405Z&quot;,
+    &quot;title&quot;: &quot;Vandervort Group&quot;,
+    &quot;page_timings_on_content_loaded&quot;: &quot;1137.9773456852&quot;,
+    &quot;page_timings_on_load&quot;: &quot;4120.85394361542&quot;,
     &quot;entries_count&quot;: 0,
     &quot;raw&quot;: {
       &quot;log&quot;: {
@@ -170,6 +245,7 @@ Content-Length: 316302</pre>
             &quot;startedDateTime&quot;: &quot;2018-01-06T22:03:55.351Z&quot;
           }
         ],
+        &quot;comment&quot;: &quot;Changed Comment&quot;,
         &quot;creator&quot;: {
           &quot;name&quot;: &quot;WebInspector&quot;,
           &quot;version&quot;: &quot;537.36&quot;
