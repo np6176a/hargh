@@ -1,0 +1,37 @@
+{
+  "addons": [
+    {
+      "plan": "heroku-postgresql",
+      "options": {
+        "version": "9.6"
+      }
+    }
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ],
+  "description": "Hargh App",
+  "env": {
+    "HOST_API": {
+      "description": "URL where it's deployed. Should be <Heroku app name>.herokuapp.com",
+      "value": "<Heroku App Name>.herokuapp.com"
+    },
+    "SECRET_KEY_BASE": {
+      "description": "Random encrypted secret",
+      "generator": "secret"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "logo": "https://raw.githubusercontent.com/rvirani1/hargh/master/readme_images/hargh.png",
+  "name": "Hargh",
+  "repository": "https://github.com/rvirani1/hargh",
+  "scripts": {
+    "postdeploy": "bundle exec rails db:migrate"
+  }
+}

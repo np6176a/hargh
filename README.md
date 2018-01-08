@@ -14,6 +14,7 @@
 * [Design Thoughts](#design-thoughts)
 * [Known Limitations](#known-limitations)
 * [Running Locally](#running-locally)
+* [Deployment](#deployment)
 * [License](#license)
 
 ## Overview
@@ -105,6 +106,13 @@ You'll need to run the following command to make sure
 your code complies.
 
 `overcommit --install`
+
+## Deployment
+
+If you don't want to bother with a local setup for now, just use the
+Heroku deploy button below.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 # License
 
