@@ -36,7 +36,7 @@ HarSchema = Dry::Validation.Schema do
           required(:queryString).each { schema(HeadersQueryStringSchema) }
           optional(:postData).schema do
             required(:mimeType).str?
-            required(:params).each do
+            optional(:params).each do
               schema do
                 required(:name).str?
                 optional(:value).str?
